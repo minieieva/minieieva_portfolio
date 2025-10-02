@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name = "keywords" content="3D artist, art portfolio, Houdini">
+    <meta name="description" content="3D Artist Mariia Minieieva. Art Portfolio.">
+    <title>minieieva</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="container">
+        <!-- Mobile Navigation -->
+        <div class="mobile_nav">
+          <a href="index.html">
+            <img id="logo_id" src="images/minieieva_logo_black.png" alt="Logo" class="logo_mobile">
+          </a>
+          <img id="mobile_cta" class="mobile_menu" src="images/menu.svg" alt="Open Menu">
+        </div>
+        
+        
+        <!-- Desktop Navigation -->
+        <div class="desktop_nav">
+            <a href="index.html">
+              <img id="logo_id" src="images/minieieva_logo_black.png" alt="Logo" class="logo">
+            </a>
+            <img id="mobile_exit" class="mobile_menu_exit" src="images/exit.svg" alt="Close Navigation">
+            <div id ="navigation" class="navigation_mobile">
+              <ul class="primary_nav">
+                <li><a id="work-link" class="items_nav" href="index.html">WORK</a></li>
+                <!-- <li><a class="items_nav" href="films.html">FILMS</a></li> -->
+                <li><a class="items_nav" href="about.html">ABOUT</a></li>
+                <li><a class="items_nav" href="contact.html">CONTACT</a></li>
+              </ul>
+            </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="general_project_body">
+    <!---Content-->
+    <p class="project_title custom_underline">Bear Grooming</p>
+    <p class="responsibilities"><span>Responsibilities:</span> Hair Guides creation, Hair Generation, Hair Rendering with MaterialX</p>
+    
+    <p class="project_subtitles">Overview</p>
+    <p class="project_text">Bear Grooming introduces a procedural system for fur grooming that involves Guide Groom, Hair Generation, and Solaris 
+      shading modules, each containing submodules (notaries). For example module Guide Groom contains base guides, guides processing with masks, breaking patterns,
+      clumping prep, and cleanup sumodules. This workflow is documented with RemNote, which makes it reusable. Artistic modifications
+      include 20 hand-painted masks and maps that control hair parameters, directions, clumping, etc., allowing to achieve super
+      realistic look based on real bear references.
+    </p>
+    <div class="images">
+      <img src="projects/Bear Grooming/cover.png" alt="" class="general_pic general_pic_main">
+      <video controls class="general_pic general_pic_main"><source src="projects/Bear Grooming/video_cover.mp4" type="video/mp4" alt="Bear Grooming Animation"></video>
+      <!-- <img src="projects/Raging planet/cover.jpg" alt="" class="general_pic general_pic_main"> -->
+    </div>
+    <!--YouTube Demo Reel-->
+    <div class="images">
+          <iframe class ="demo_reel" src="https://www.youtube.com/embed/MyUIttCIAhE?si=xpGxcCH8nIeqw4um" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+        </iframe>
+    </div>
+
+    <p class="project_subtitles">Hair Guides</p>
+    <p class="project_text">After analyzing references, I noticed that the fur on the nose and front part of the face is very short, 
+      while the fur on the sides and back is very long. I divided the workflow into two parts. For each workflow, I follow the same 
+      setup process, moving from Guides Base to Guides Clumping.
+    </p>
+        <p class="project_subtitles_lv2">Base</p>
+        <p class="project_text">The base consists of mapped guides that set the initial directions. This process happens inside 
+          the guideAdvect node, which moves or deforms guides using a velocity field. The first input is the Base, where I scatter 
+          straight curves on the surface for guides. The second input is the skin geometry, taken from the Object Merge SKIN node. 
+          The fourth input comes from the Volume Velocity From Curves, which I drew based on reference.
+        </p>
+    <div class="images special_margin">
+      <img src="projects/Bear Grooming/base_portfolio.png" alt="" class="general_pic">
+      <figure>
+      <img src="projects/Bear Grooming/2a guides for face.png" alt="" class="general_pic">
+      <figcaption>Hand-drawn guides</figcaption>
+      </figure>
+    </div>
+    <div class="images">
+      <figure>
+      <img src="projects/Bear Grooming/3a hair scatter on face.png" alt="" class="general_pic">
+      <figcaption>Hairs (serve as guides) scattered on the bear</figcaption>
+      </figure>
+      <figure>
+      <img src="projects/Bear Grooming/4a guides influencing hair.png" alt="" class="general_pic">
+      <figcaption>Guides' influence on scattered hairs</figcaption>
+      </figure>
+    </div>
+    <p class="project_subtitles_lv2">Guide Process</p>
+        <p class="project_text">At this stage, I apply modifications driven by noise, curve masks, and custom hand-drawn masks. 
+          These affect bending, length, lift, frizz, clumping, and wave of the hairs at different stages of the workflow. This 
+          approach allows for customization, such as making some hairs messier or more lifted.
+        </p>
+    <div class="images special_margin">
+      <figure><img src="projects/Bear Grooming/9.1a add lifted parts mask .png" alt="" class="general_pic">
+      <figcaption>Mask for the lifted hair sections</figcaption>
+      </figure>
+      <figure><img src="projects/Bear Grooming/9.1a add lifted parts with mask .png" alt="" class="general_pic">
+      <figcaption>Result of applying the mask</figcaption>
+      </figure>
+    </div>
+    <div class="images">
+      <figure><img src="projects/Bear Grooming/13a clump mixing noise and length.png" alt="" class="general_pic">
+      <figcaption>Variations by mixing noise and length</figcaption>
+      </figure>
+      <figure><img src="projects/Bear Grooming/14 merge.png" alt="" class="general_pic">
+      <figcaption>Final look after applying various Guide Processes</figcaption>
+      </figure>
+    </div>
+    <p class="project_subtitles_lv2">Cleanup</p>
+        <p class="project_text">The cleanup process organizes the LV1 guides by removing collisions, managing attributes, 
+          and grouping them.
+        </p>
+    <div class="images">
+      <img src="projects/Bear Grooming/cleanup_portfolio.png" alt="" class="general_pic">
+    </div>    
+    <p class="project_subtitles_lv2">LV2 Guides</p>
+        <p class="project_text">I then create a second level of guides to add variation and detail. These LV2 guides are essentially 
+          clumped and slightly modified LV1 guides. The setup includes the Base, Hair Clump, Guide Process, and Cleaning stages.
+    </p>
+    <div class="images">
+      <figure><img src="projects/Bear Grooming/LV2 clumping.png" alt="" class="general_pic">
+        <figcaption>LV2 clumping</figcaption>
+        </figure>
+      <figure><img src="projects/Bear Grooming/LV2 adding random length bend and frizz.png" alt="" class="general_pic">
+      <figcaption>Lv2 clumping after applying random length, bend, and frizz</figcaption>
+      </figure>
+    </div>
+    <p class="project_text">At this point, two levels of hair guides are complete, and the process moves into creating the actual 
+      fur geometry.
+    </p>
+
+    <p class="project_subtitles">Hair Generate</p>
+    <p class="project_text">Within the Hair Generate network, I used a Hair Generate node combined with a custom-drawn density 
+      mask to optimize hair scattering. Areas with short, straight fur required higher density to feel fuller, while regions with 
+      longer, frizzier hairs needed less density to maintain balance and realism. I also introduced diagonal patterns along the 
+      sides leading toward the face, as well as varied patches of density across the back, to better mimic the natural 
+      irregularities found in real bear fur.
+    </p>
+    <div class="images">
+      <figure><img src="projects/Bear Grooming/18 map generating hair based on density.png" alt="" class="general_pic">
+      <figcaption>Map for generating hairs based on density</figcaption>
+      </figure>
+      <figure><img src="projects/Bear Grooming/18 generating hair based on density.png" alt="" class="general_pic">
+      <figcaption>Result after applying the map</figcaption>
+      </figure>
+    </div>
+    <p class="project_subtitles_lv2">Guide Process</p>
+        <p class="project_text">ITo introduce natural variation, I applied curve-mask and custom-mask driven adjustments to hair 
+          length and bend. When hairs form clumpsin Houdini Fur workflow, they become shorter, so I made them longer to
+          account for this shift. Because Set Length Guide Process make all hairs grow straight, I bent the longer strands to break up 
+          uniformity and create a more organic flow.
+    </p>
+    <p class="project_subtitles_lv2">Clumping</p>
+        <p class="project_text">For realism, I applied three levels of clumping using the Hair Clump node. This hierarchical 
+          approach breaks larger clumps into smaller groups, and then into even finer sub-clumps, closely mimicking the layered 
+          structure of real fur. The first two clumping stages were guided by LV1 and LV2 hair guides, while the third applied 
+          broader parameters across the groom, with the exception of the nose area, which needed to remain straight and clean. Additionally,
+          I created a tightness map that defines how tight the clumps are and thereby, optimizes the distribution. Areas with short 
+          straight hair can be less tight and heavily-clumped areas of long hairs should be more tight. 
+    </p>
+    <div class="images special_margin">
+      <figure><img src="projects/Bear Grooming/19 clumping hair based on tightness and LV1 guides.png" alt="" class="general_pic">
+      <figcaption>Hair clumping based on tightness and LV1 guides</figcaption>
+      </figure>
+      <figure><img src="projects/Bear Grooming/21 clumping hair based on tightness and LV2 guides.png" alt="" class="general_pic">
+      <figcaption>Hair clumping based on tightness and LV2 guides</figcaption>
+      </figure>
+    </div>
+    <div class="images">
+      <figure><img src="projects/Bear Grooming/23 final clumping into smaller parts.png" alt="" class="general_pic">
+      <figcaption>Hair clumping after final (LV3) clumping</figcaption>
+      </figure>
+      <figure><img src="projects/Bear Grooming/24 add messiness with frizz and length extension(1).png" alt="" class="general_pic">
+      <figcaption>Added messiness with frizz and extended length for the ends of the hairs</figcaption>
+      </figure>
+      
+    </div>
+    <p class="project_subtitles_lv2">Rendering preparation</p>
+        <p class="project_text">or procedural rendering, I generated and exported two key attributes to enhance shading control. 
+          The first, rampSHD, defined the color gradient along each hair curve. The second, lenSHD, distinguished long hairs 
+          from short hairs.
+    </p>
+    <div class="images">
+      <img src="projects/Bear Grooming/rendering_portfolio.png" alt="" class="general_pic">
+    </div>
+        <p class="project_subtitles">Procedural MaterialX shading</p>
+        <p class="project_text">For the bear groom, I applied three procedural modifications to the fur material in MaterialX to 
+          achieve realistic hair shading. Using the rampSHD attribute, I darkened the roots and lightened the tips to replicate 
+          the natural gradient found in real bear fur. The lenSHD attribute was then used to separate long hairs from short ones, 
+          with the longer strands near the base darkened to add depth and weight. I also incorporated the clumpidSHD attribute, 
+          generated during the Hair Generation stage, to introduce noise and create natural color variations between 
+          clumps. Finally, I adjusted melanin saturation to better simulate how light interacts with real animal hair.
+    </p>
+        <div class="images special_margin">
+      <figure><img src="projects/Bear Grooming/shader1.png" alt="" class="general_pic">
+        <figcaption>rampSHD-driven shader effect</figcaption>
+      </figure>
+      <figure><img src="projects/Bear Grooming/shader_n1.png" alt="" class="general_pic">
+        <figcaption>lenSHD-driven shader effect</figcaption>
+      </figure>
+    </div>
+    <div class="images">
+      <figure><img src="projects/Bear Grooming/shader_n2.png" alt="" class="general_pic">
+        <figcaption>clumpidSHD-driven shader effect</figcaption>
+      </figure>
+      <figure><img src="projects/Bear Grooming/shader_n3.png" alt="" class="general_pic">
+        <figcaption>Enhanced melanin shader effect</figcaption>
+      </figure>
+    </div>   
+    <p class="project_subtitles">Challenges and learning outcomes</p>
+    <p class="project_text">My challenge was replicating the messy appearance of longer hairs after coming into contact with water.</p>
+    <p class="project_text">AIn real bears, the ends of wet hairs often look damp and carry a noticeably different texture than 
+      the rest of the strand—they appear heavier, frizzier, wavier, and less controlled. My first attempt was to modify the hair 
+      ends using the curveu attribute, but this did not produce convincing results. The final solution was to apply a Frizz 
+      Guide Process with very subtle noise, making the effect more pronounced on longer hairs so their clump ends developed 
+      messy normal directions. Then, I added a Set Length Guide Process that generated short, straight 
+      hairs growing out from the frizzy sections, but oriented in slightly irregular directions. This technique helped me to
+      achieve that messy, but straight look that naturally occurs when fur is wet.
+    </p>
+    <div class="images">
+      <figure><img src="projects/Bear Grooming/frizzy_portfolio.png" alt="" class="general_pic">
+        <figcaption>Hairs after applying Guide Process: Frizz</figcaption>
+      </figure>
+      <figure><img src="projects/Bear Grooming/length_portfolio.png" alt="" class="general_pic">
+        <figcaption>Hairs after applying Guide Process: Set Length</figcaption>
+      </figure>
+    </div>   
+        </div>
+    <!---Footer-->
+
+  <div class="bottom_contact">
+    <div class="icons_footer">
+      <a href="mailto:mariia.minieieva@gmail.com">
+        <img id="email" src="images/email_icon.svg" alt="" class="icon_footer">
+      </a>
+      <a href="https://www.linkedin.com/in/minieieva/">
+        <img id="linkedin" src="images/linkedin_icon.svg" alt="" class="icon_footer">
+      </a>
+    </div>
+    <footer>
+      <p>Crafted by Mariia Minieieva</p>
+    </footer>
+  </div>
+  
+  <script>
+    const mobileBtn = document.getElementById('mobile_cta')
+          nav = document.getElementById('navigation')
+          mobileBtnExit = document.getElementById('mobile_exit');
+              figure1 = document.getElementById('figure_pr1');
+              figure2 = document.getElementById('figure_pr2');
+              figure3 = document.getElementById('figure_pr3');
+              figure4 = document.getElementById('figure_pr4');
+              figure5 = document.getElementById('figure_pr5');
+              figure6 = document.getElementById('figure_pr6');
+              figure7 = document.getElementById('figure_pr7');
+          icons = document.getElementById('icon_footer');
+  
+    mobileBtn.addEventListener('click', () => {
+        nav.classList.add('menu-btn');
+        mobileBtnExit.classList.add('exit-btn');
+        mobileBtn.classList.add('hide-burger');
+            figure1.classList.add('figure-show1');
+            figure2.classList.add('figure-show2');
+            figure3.classList.add('figure-show3');
+            figure4.classList.add('figure-show4');
+            figure5.classList.add('figure-show5');
+            figure6.classList.add('figure-show6');
+            figure7.classList.add('figure-show7');
+        email.classList.add('email');
+        linkedin.classList.add('linkedin');
+  
+    })
+  
+    mobileBtnExit.addEventListener('click', () => {
+         nav.classList.remove('menu-btn');
+         mobileBtnExit.classList.remove('exit-btn');
+        mobileBtn.classList.remove('hide-burger');
+            figure1.classList.remove('figure-show1');
+            figure2.classList.remove('figure-show2');
+            figure3.classList.remove('figure-show3');
+            figure4.classList.remove('figure-show4');
+            figure5.classList.remove('figure-show5');
+            figure6.classList.remove('figure-show6');
+            figure7.classList.remove('figure-show7');
+        email.classList.remove('email');
+        linkedin.classList.remove('linkedin');
+     })
+  
+  </script>
+  
+  <!-- Removing splash animation when clicking on WORK -->
+  <script>
+    document.getElementById('work-link').addEventListener('click', function(event) {
+      event.preventDefault();
+      sessionStorage.setItem('skipAnimation', 'true'); 
+      window.location.href = 'index.html';
+    });
+    </script>
+
+  </body>
+  </html>

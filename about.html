@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name = "keywords" content="3D artist, art portfolio, Houdini">
+    <meta name="description" content="3D Artist Mariia Minieieva. Art Portfolio.">
+    <title>minieieva</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="container">
+        <!-- Mobile Navigation -->
+        <div class="mobile_nav">
+          <a href="index.html">
+            <img id="logo_id" src="images/minieieva_logo_black.png" alt="Logo" class="logo_mobile">
+          </a>
+          <img id="mobile_cta" class="mobile_menu" src="images/menu.svg" alt="Open Menu">
+        </div>
+        
+        
+        <!-- Desktop Navigation -->
+        <div class="desktop_nav">
+            <a href="index.html">
+              <img id="logo_id" src="images/minieieva_logo_black.png" alt="Logo" class="logo">
+            </a>
+            <img id="mobile_exit" class="mobile_menu_exit" src="images/exit.svg" alt="Close Navigation">
+            <div id ="navigation" class="navigation_mobile">
+              <ul class="primary_nav">
+                <li><a id="work-link" class="items_nav" href="index.html">WORK</a></li>
+                <!-- <li><a class="items_nav" href="films.html">FILMS</a></li> -->
+                <li class="current"><a class="items_nav" href="about.html">ABOUT</a></li>
+                <li><a class="items_nav" href="contact.html">CONTACT</a></li>
+              </ul>
+            </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    <!---Content-->
+    <div class="contain_about">
+            <img id="ifDesktop" class="mariia_img" src="images/headshot.jpg" alt="Photo of Mariia">
+            <img id="ifMobile" class="mariia_img2" src="images/headshot_mobile.jpg" alt="Photo of Mariia">
+        <div class="text_about">
+        <p>Mariia Minieieva is a digital 3D artist based in Iowa, USA, whose passion lies in exploring abstract forms through VEX code and mathematical expressions. By studying her two passions, Studio Art and Computer Science, at Grinnell College, she has positioned her art at the intersection of art and technology.</p>
+
+        <p>Mariia's primary tools for crafting 3D art include Procreate, Houdini, and After Effects, complemented by Mantra and Redshift rendering engines to add depth and intrigue to her creations.</p>
+            
+        <p>Before immersing herself in the realm of 3D art, Mariia pursued background in a digital 2D art for 7 years.</p>
+            
+        <p> <a href="https://drive.google.com/drive/folders/1RyfEkCzSnw1YWkcxb5zdAieFd6jNhS8w?usp=sharing"><span style="font-weight:semi-bold">Resume Mariia Minieieva</span></a></p>
+    </div>
+    </div>
+
+    <!---Footer-->
+
+  <div class="bottom_contact">
+    <div class="icons_footer">
+      <a href="mailto:mariia.minieieva@gmail.com">
+        <img id="email" src="images/email_icon.svg" alt="" class="icon_footer">
+      </a>
+      <a href="https://www.linkedin.com/in/minieieva/">
+        <img id="linkedin" src="images/linkedin_icon.svg" alt="" class="icon_footer">
+      </a>
+    </div>
+    <footer>
+      <p>Crafted by Mariia Minieieva</p>
+    </footer>
+  </div>
+
+
+
+  <script>
+    const mobileBtn = document.getElementById('mobile_cta')
+          nav = document.getElementById('navigation')
+          mobileBtnExit = document.getElementById('mobile_exit');
+              figure1 = document.getElementById('figure_pr1');
+              figure2 = document.getElementById('figure_pr2');
+              figure3 = document.getElementById('figure_pr3');
+              figure4 = document.getElementById('figure_pr4');
+              figure5 = document.getElementById('figure_pr5');
+              figure6 = document.getElementById('figure_pr6');
+              figure7 = document.getElementById('figure_pr7');
+          icons = document.getElementById('icon_footer');
+  
+    mobileBtn.addEventListener('click', () => {
+        nav.classList.add('menu-btn');
+        mobileBtnExit.classList.add('exit-btn');
+        mobileBtn.classList.add('hide-burger');
+            figure1.classList.add('figure-show1');
+            figure2.classList.add('figure-show2');
+            figure3.classList.add('figure-show3');
+            figure4.classList.add('figure-show4');
+            figure5.classList.add('figure-show5');
+            figure6.classList.add('figure-show6');
+            figure7.classList.add('figure-show7');
+        email.classList.add('email');
+        linkedin.classList.add('linkedin');
+  
+    })
+  
+    mobileBtnExit.addEventListener('click', () => {
+         nav.classList.remove('menu-btn');
+         mobileBtnExit.classList.remove('exit-btn');
+        mobileBtn.classList.remove('hide-burger');
+            figure1.classList.remove('figure-show1');
+            figure2.classList.remove('figure-show2');
+            figure3.classList.remove('figure-show3');
+            figure4.classList.remove('figure-show4');
+            figure5.classList.remove('figure-show5');
+            figure6.classList.remove('figure-show6');
+            figure7.classList.remove('figure-show7');
+        email.classList.remove('email');
+        linkedin.classList.remove('linkedin');
+     })
+  
+  </script>
+  
+<!-- Removing splash animation when clicking on WORK -->
+  <script>
+    document.getElementById('work-link').addEventListener('click', function(event) {
+      event.preventDefault();
+      sessionStorage.setItem('skipAnimation', 'true'); 
+      window.location.href = 'index.html';
+    });
+    </script>
+
+  </body>
+  </html>

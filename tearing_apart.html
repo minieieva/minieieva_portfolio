@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name = "keywords" content="3D artist, art portfolio, Houdini">
+    <meta name="description" content="3D Artist Mariia Minieieva. Art Portfolio.">
+    <title>minieieva</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="container">
+        <!-- Mobile Navigation -->
+        <div class="mobile_nav">
+          <a href="index.html">
+            <img id="logo_id" src="images/minieieva_logo_black.png" alt="Logo" class="logo_mobile">
+          </a>
+          <img id="mobile_cta" class="mobile_menu" src="images/menu.svg" alt="Open Menu">
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <div class="desktop_nav">
+            <a href="index.html">
+              <img id="logo_id" src="images/minieieva_logo_black.png" alt="Logo" class="logo">
+            </a>
+            <img id="mobile_exit" class="mobile_menu_exit" src="images/exit.svg" alt="Close Navigation">
+            <div id ="navigation" class="navigation_mobile">
+              <ul class="primary_nav">
+                <li><a id="work-link" class="items_nav" href="index.html">WORK</a></li>
+                <!-- <li><a class="items_nav" href="films.html">FILMS</a></li> -->
+                <li><a class="items_nav" href="about.html">ABOUT</a></li>
+                <li><a class="items_nav" href="contact.html">CONTACT</a></li>
+              </ul>
+            </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="general_project_body">
+    <!---Content-->
+    <p class="project_title custom_underline">Tearing Apart</p>
+    <p class="responsibilities"><span>Responsibilities: </span>3D Modeling, Vellum tearing simulation, VEX coding, Vector math, Rendering
+    </p>
+    
+    <p class="project_subtitles">Overview</p>
+    <p class="project_text">Tearing Apart is a project that combines dynamic vellum simulation with creative coding to bring cloth to life in an 
+        engaging way. By utilizing weld and cloth constraints, additional forces, and VEX coding, the project simulates the physical behavior of 
+        torn cloth. The process begins with creating the base geometry, followed by adding noise to the positions and edges of the cloth, setting 
+        up constraints to simulate tearing, and finally, enhancing the visual impact through code and custom materials. This results in an 
+        immersive experience where cloth pieces break apart and swirl in the air, highlighting the chaotic beauty of their motion.
+    </p>
+    <div class="images">
+      <img src="projects/Tearing Apart/cover.png" alt="" class="general_pic general_pic_main">
+      <video controls class="general_pic general_pic_main"><source src="projects/Tearing Apart/video.mp4" type="video/mp4" alt="Tearing Apart Animation"></video>
+      <!-- <img src="projects/Tearing Apart/cover.png" alt="" class="general_pic general_pic_main"> -->
+      </div>
+
+    <p class="project_subtitles">3D modeling</p>
+    <p class="project_text">The vellum pieces start with a simple 60x30 grid as the base geometry. I remeshed the grid geometry to create a solid foundation for further 
+        transformations using a for-loop to give the cloth a more natural look, especially around the torn edges and disconnected pieces. Each cloth element's 
+        position was altered with noise, and I distorted the edges and randomly rotated each piece, adding randomness to the design and enhancing its organic appearance. 
+    </p>
+    <div class="images special_margin">
+        <img src="projects/Tearing Apart/1.png" alt="" class="general_pic">
+        <img src="projects/Tearing Apart/2.png" alt="" class="general_pic">
+      </div>
+      <div class="images">
+        <img src="projects/Tearing Apart/3.png" alt="" class="general_pic">
+        <img src="projects/Tearing Apart/4.png" alt="" class="general_pic">
+      </div>
+
+    <p class="project_subtitles">VEX coding</p>
+    <p class="project_text">To add a more cartoonish and visually engaging effect to the vellum cloth, I used VEX coding to create the "outlines." 
+        The first step was calculating the val attribute by taking the dot product between the normal vector at each point and the direction 
+        vector dir that points from the point to the camera. The direction vector is derived by subtracting the camera's position from each 
+        point's position, then normalizing it. The result of this dot product is a value between -1 and 1, where 1 indicates the normal is 
+        facing directly at the camera, 0 means it's perpendicular to the camera's view, and -1 indicates the normal is facing away. I focused 
+        on values close to zero, where the normal is nearly perpendicular to the camera, which are typically found along the edges or folds of 
+        the cloth.
+    </p>
+    <div class="images">
+    <img src="projects/Tearing Apart/5.png" alt="" class="general_pic">
+    </div>
+    <p class="project_text">In the second part of the code, I used a threshold value to isolate the points where the normal is nearly 
+        perpendicular to the camera. Points where the val attribute was too far from zero were filtered out, either by removing values below the 
+        negative threshold or above the positive threshold. This left only the points where the normal was almost perpendicular to the camera, 
+        typically outlining concavities in the cloth.
+    </p>
+    <div class="images">
+    <img src="projects/Tearing Apart/6.png" alt="" class="general_pic">
+    </div>
+    
+    <p class="project_subtitles">Turbulent Behavior Simulation with Vellum Solver</p>
+    <p class="project_text">In the Vellum solver, I reduced gravity to make the cloth pieces appear to levitate. To enhance their movement, I 
+        introduced a Pop Axis force, which applied a vertical force to make the pieces circulate around a defined shape and rise. I then added 
+        wind to introduce an unpredictable, swirling behavior that gave the cloth a more chaotic, turbulent motion.
+    </p>
+    <div class="images">
+    <img src="projects/Tearing Apart/7.png" alt="" class="general_pic">
+    </div>
+
+    <p class="project_subtitles">Tearing of the Cloth Pieces Through Vellum Constraints</p>
+    <p class="project_text">To make the cloth tear naturally as it swirled, I used Vellum weld constraints to stitch the pieces, produced by the 
+        Edge Fracture node, together. I set a breaking threshold of 0.0004 to ensure the pieces would tear apart when forces started to stretch 
+        them beyond their limits. As the geometry moved and forces acted on it, the cloth naturally began to tear, adding realism to the 
+        simulation.
+    </p>
+    <div class="images">
+    <img src="projects/Tearing Apart/8.png" alt="" class="general_pic">
+    </div>
+
+    <p class="project_subtitles">Rendering</p>
+    <p class="project_text">For rendering, I created three custom materials: one for the cloth, one for the lines on the cloth, and one for the 
+        background. I designed the background to contain shadows from the flying cloth pieces, so I created a highly diffusive orange material. 
+        To ensure no reflections from the lighting, I set the roughness of the reflection to 0, keeping it matte. For the black lines outlining 
+        the cloth, I rendered them as strands and adjusted their scale and type to achieve the desired visual effect.
+    </p>
+    <div class="images">
+    <img src="projects/Tearing Apart/9.png" alt="" class="general_pic">
+    </div>
+
+    <p class="project_subtitles">Challenges and learning outcomes</p>
+    <p class="project_text">Challenges and Learning Outcomes One of the challenges I faced was creating unique ripped-edge effects for each piece of cloth.
+    </p>
+    <p class="project_text">Initially, since all the cloth pieces were identical, applying noise and fracture produced the same result for every 
+        piece. To solve this, I utilized the "iteration" attribute generated by the for-loop, which is unique for each piece. By setting the 
+        offset for noise through the equation rand(detail(0, "iteration", 0)), I generated a pseudorandom value based on the iteration attribute. 
+        Similarly, for the Edge Fracture node, I defined the number of pieces the cloth fractured into based on detail(0, "iteration", 0)/5, 
+        which created a value from 0 to 5 depending on the iteration. This approach allowed each piece to have unique transformations, making the 
+        final result more varied and realistic.
+    </p>
+    <p class="project_text">Below are the effects of these transformations on different pieces of cloth.
+    </p>
+    <div class="images">
+    <img src="projects/Tearing Apart/10.png" alt="" class="general_pic">
+    </div>
+        </div>
+    <!---Footer-->
+
+  <div class="bottom_contact">
+    <div class="icons_footer">
+      <a href="mailto:mariia.minieieva@gmail.com">
+        <img id="email" src="images/email_icon.svg" alt="" class="icon_footer">
+      </a>
+      <a href="https://www.linkedin.com/in/minieieva/">
+        <img id="linkedin" src="images/linkedin_icon.svg" alt="" class="icon_footer">
+      </a>
+    </div>
+    <footer>
+      <p>Crafted by Mariia Minieieva</p>
+    </footer>
+  </div>
+
+  <script>
+    const mobileBtn = document.getElementById('mobile_cta')
+          nav = document.getElementById('navigation')
+          mobileBtnExit = document.getElementById('mobile_exit');
+              figure1 = document.getElementById('figure_pr1');
+              figure2 = document.getElementById('figure_pr2');
+              figure3 = document.getElementById('figure_pr3');
+              figure4 = document.getElementById('figure_pr4');
+              figure5 = document.getElementById('figure_pr5');
+              figure6 = document.getElementById('figure_pr6');
+              figure7 = document.getElementById('figure_pr7');
+          icons = document.getElementById('icon_footer');
+  
+    mobileBtn.addEventListener('click', () => {
+        nav.classList.add('menu-btn');
+        mobileBtnExit.classList.add('exit-btn');
+        mobileBtn.classList.add('hide-burger');
+            figure1.classList.add('figure-show1');
+            figure2.classList.add('figure-show2');
+            figure3.classList.add('figure-show3');
+            figure4.classList.add('figure-show4');
+            figure5.classList.add('figure-show5');
+            figure6.classList.add('figure-show6');
+            figure7.classList.add('figure-show7');
+        email.classList.add('email');
+        linkedin.classList.add('linkedin');
+  
+    })
+  
+    mobileBtnExit.addEventListener('click', () => {
+         nav.classList.remove('menu-btn');
+         mobileBtnExit.classList.remove('exit-btn');
+        mobileBtn.classList.remove('hide-burger');
+            figure1.classList.remove('figure-show1');
+            figure2.classList.remove('figure-show2');
+            figure3.classList.remove('figure-show3');
+            figure4.classList.remove('figure-show4');
+            figure5.classList.remove('figure-show5');
+            figure6.classList.remove('figure-show6');
+            figure7.classList.remove('figure-show7');
+        email.classList.remove('email');
+        linkedin.classList.remove('linkedin');
+     })
+  
+  </script>
+  
+  <!-- Removing splash animation when clicking on WORK -->
+  <script>
+    document.getElementById('work-link').addEventListener('click', function(event) {
+      event.preventDefault();
+      sessionStorage.setItem('skipAnimation', 'true'); 
+      window.location.href = 'index.html';
+    });
+    </script>
+
+  </body>
+  </html>

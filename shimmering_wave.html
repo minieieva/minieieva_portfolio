@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name = "keywords" content="3D artist, art portfolio, Houdini">
+    <meta name="description" content="3D Artist Mariia Minieieva. Art Portfolio.">
+    <title>minieieva</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="container">
+        <!-- Mobile Navigation -->
+        <div class="mobile_nav">
+          <a href="index.html">
+            <img id="logo_id" src="images/minieieva_logo_black.png" alt="Logo" class="logo_mobile">
+          </a>
+          <img id="mobile_cta" class="mobile_menu" src="images/menu.svg" alt="Open Menu">
+        </div>
+        
+        
+        <!-- Desktop Navigation -->
+        <div class="desktop_nav">
+            <a href="index.html">
+              <img id="logo_id" src="images/minieieva_logo_black.png" alt="Logo" class="logo">
+            </a>
+            <img id="mobile_exit" class="mobile_menu_exit" src="images/exit.svg" alt="Close Navigation">
+            <div id ="navigation" class="navigation_mobile">
+              <ul class="primary_nav">
+                <li><a id="work-link" class="items_nav" href="index.html">WORK</a></li>
+                <!-- <li><a class="items_nav" href="films.html">FILMS</a></li> -->
+                <li><a class="items_nav" href="about.html">ABOUT</a></li>
+                <li><a class="items_nav" href="contact.html">CONTACT</a></li>
+              </ul>
+            </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="general_project_body">
+    <!---Content-->
+    <p class="project_title custom_underline">Shimmering Wave</p>
+    <p class="responsibilities"><span>Responsibilities: </span>VEX coding, Surface animation, Camera animation, Rendering</p>
+    
+    <p class="project_subtitles">Overview</p>
+    <p class="project_text">Shimmering Wave is a project that demonstrates how mathematical expressions can be used to create exciting, abstract 
+        animated structures without any modeling! While discussing the representation of 3D surfaces in my Calculus 2 class through parametric 
+        equations, I became interested in how a surface changes as a parameter grows and how introducing new variables can alter its appearance. 
+        My process involved representing the equation of a surface in 3D space using points generated with VEX code, animating their gradual 
+        appearance, representing the points as spheres, and creating custom shaders for both the background and spheres using Redshift. The camera 
+        animation enhances the experience, making it feel as though the wave is about to catch up with the viewer.
+    </p>
+    <div class="images">
+      <img src="projects/Shimmering wave/cover.png" alt="" class="general_pic general_pic_main">
+      <video controls class="general_pic general_pic_main"><source src="projects/Shimmering wave/video.mp4" type="video/mp4" alt="Raging Planet Animation"></video>
+      <!-- <img src="projects/Shimmering wave/cover.png" alt="" class="general_pic general_pic_main"> -->
+      </div>
+
+    <p class="project_subtitles">VEX code</p>
+    <p class="project_text">The VEX code creates a dynamic 3D sinusoidal surface by iterating through a grid of points in the x-y plane and 
+        calculating their z-coordinates based on a mathematical expression. Using nested for loops, I iterated over a range of values for x and y, 
+        scaling them to control the spacing of the grid. For each (x, y) pair, the z value was calculated as z = t * (sin(x) + sin(y)), where t 
+        introduces a time-dependent progression, adding variation to the height (z) across iterations.
+    </p>
+    <p class="project_text">Each calculated position was then combined into a vector and added to the geometry with the addpoint function, 
+        resulting in a dense, wavy surface. The grid's size is dynamically adjustable by modifying the multiples applied to x and y. The wave 
+        height can be controlled by adjusting the value of t, while the resolution of the surface can be fine-tuned by altering the loop range 
+        and step size. This method offers flexibility and efficiency, making it ideal for procedural modeling.
+    </p>
+    <div class="images special_margin">
+      <img src="projects/Shimmering wave/1.png" alt="" class="general_pic">
+      <img src="projects/Shimmering wave/2.png" alt="" class="general_pic">
+    </div>
+
+    <p class="project_subtitles">Adding irregularity to the position and scale</p>
+    <p class="project_text">Perfection does not exist in the real world and therefore shouldn't in 3D! To introduce a sense of imperfection into my 
+        wave, I used the Attribute Noise node with Simplex Noise to subtly shift the positions (P attribute) of the points. This helped create 
+        slight variations in the surface, making it feel more organic. I also employed the Attribute Randomize node to randomize the pscale 
+        attribute, varying the size of the spheres.
+    </p>
+    <div class="images">
+      <img src="projects/Shimmering wave/3.png" alt="" class="general_pic">
+      <img src="projects/Shimmering wave/4.png" alt="" class="general_pic">
+    </div>
+    
+    <p class="project_subtitles">Rendering</p>
+    <p class="project_text">I set keyframes and adjusted the values along all axes to make the camera move diagonally, following the flow of the 
+        waves across the surface. To really sell the feeling that the wave was about to catch up with the viewer, I animated the focus distance 
+        to increase. For lighting, I placed a large area light to brighten the entire scene, with two smaller lights positioned as key and fill 
+        to create some depth and highlight the details. I also got creative with materials, using a Ramp node to craft a custom gradient for the 
+        background, and designed bubbles to match the style of the scene.
+    </p>
+    <div class="images">
+        <img src="projects/Shimmering wave/5.png" alt="" class="general_pic">
+        <img src="projects/Shimmering wave/6.png" alt="" class="general_pic">
+      </div>
+
+    <p class="project_subtitles">Challenges and learning outcomes</p>
+    <p class="project_text">One challenge I faced was finding an efficient way to add geometry to the generated points.</p>
+    <p class="project_text">Initially, I used the CopytoPoints node with sphere geometry, but this was very slow and inefficient for simulation. 
+        To solve this, I switched to using the Vellum Configure Grains node, which treated the geometry as grains. This method significantly 
+        improved performance and allowed for faster, more efficient simulations.
+    </p>
+    <div class="images">
+    <img src="projects/Shimmering wave/7.png" alt="" class="general_pic">
+    </div>
+        </div>
+    <!---Footer-->
+
+  <div class="bottom_contact">
+    <div class="icons_footer">
+      <a href="mailto:mariia.minieieva@gmail.com">
+        <img id="email" src="images/email_icon.svg" alt="" class="icon_footer">
+      </a>
+      <a href="https://www.linkedin.com/in/minieieva/">
+        <img id="linkedin" src="images/linkedin_icon.svg" alt="" class="icon_footer">
+      </a>
+    </div>
+    <footer>
+      <p>Crafted by Mariia Minieieva</p>
+    </footer>
+  </div>
+
+  <script>
+    const mobileBtn = document.getElementById('mobile_cta')
+          nav = document.getElementById('navigation')
+          mobileBtnExit = document.getElementById('mobile_exit');
+              figure1 = document.getElementById('figure_pr1');
+              figure2 = document.getElementById('figure_pr2');
+              figure3 = document.getElementById('figure_pr3');
+              figure4 = document.getElementById('figure_pr4');
+              figure5 = document.getElementById('figure_pr5');
+              figure6 = document.getElementById('figure_pr6');
+              figure7 = document.getElementById('figure_pr7');
+          icons = document.getElementById('icon_footer');
+  
+    mobileBtn.addEventListener('click', () => {
+        nav.classList.add('menu-btn');
+        mobileBtnExit.classList.add('exit-btn');
+        mobileBtn.classList.add('hide-burger');
+            figure1.classList.add('figure-show1');
+            figure2.classList.add('figure-show2');
+            figure3.classList.add('figure-show3');
+            figure4.classList.add('figure-show4');
+            figure5.classList.add('figure-show5');
+            figure6.classList.add('figure-show6');
+            figure7.classList.add('figure-show7');
+        email.classList.add('email');
+        linkedin.classList.add('linkedin');
+  
+    })
+  
+    mobileBtnExit.addEventListener('click', () => {
+         nav.classList.remove('menu-btn');
+         mobileBtnExit.classList.remove('exit-btn');
+        mobileBtn.classList.remove('hide-burger');
+            figure1.classList.remove('figure-show1');
+            figure2.classList.remove('figure-show2');
+            figure3.classList.remove('figure-show3');
+            figure4.classList.remove('figure-show4');
+            figure5.classList.remove('figure-show5');
+            figure6.classList.remove('figure-show6');
+            figure7.classList.remove('figure-show7');
+        email.classList.remove('email');
+        linkedin.classList.remove('linkedin');
+     })
+  
+  </script>
+  
+  <!-- Removing splash animation when clicking on WORK -->
+  <script>
+    document.getElementById('work-link').addEventListener('click', function(event) {
+      event.preventDefault();
+      sessionStorage.setItem('skipAnimation', 'true'); 
+      window.location.href = 'index.html';
+    });
+    </script>
+
+  </body>
+  </html>

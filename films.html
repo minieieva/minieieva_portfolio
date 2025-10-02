@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name = "keywords" content="3D artist, art portfolio, Houdini">
+    <meta name="description" content="3D Artist Mariia Minieieva. Art Portfolio.">
+    <title>minieieva</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="container">
+        <!-- Mobile Navigation -->
+        <div class="mobile_nav">
+          <a href="index.html">
+            <img id="logo_id" src="images/minieieva_logo_black.png" alt="Logo" class="logo_mobile">
+          </a>
+          <img id="mobile_cta" class="mobile_menu" src="images/menu.svg" alt="Open Menu">
+        </div>
+        
+        
+        <!-- Desktop Navigation -->
+        <div class="desktop_nav">
+            <a href="index.html">
+              <img id="logo_id" src="images/minieieva_logo_black.png" alt="Logo" class="logo">
+            </a>
+            <img id="mobile_exit" class="mobile_menu_exit" src="images/exit.svg" alt="Close Navigation">
+            <div id ="navigation" class="navigation_mobile">
+              <ul class="primary_nav">
+                <li><a id="work-link" class="items_nav" href="index.html">3D WORK</a></li>
+                <li class="current"><a class="items_nav" href="films.html">FILMS</a></li>
+                <li><a class="items_nav" href="about.html">ABOUT</a></li>
+                <li><a class="items_nav" href="contact.html">CONTACT</a></li>
+              </ul>
+            </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    <!---Content-->
+    <div class="general_project_body">
+    <p class="project_title custom_underline">Empty Bowls</p>
+    <p class="responsibilities"><span style="font-weight:bold">Role: </span> Filmmaker</p>
+    <div class="films_container">
+            <iframe class="film" src="https://www.youtube.com/embed/yf53uq9JE5o?si=M1VPDjFuJ9yUWg77" title="Empty Bowls" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="film_info">
+            <p class="project_subtitles">Process</p>
+            <p class="project_text">For this film, I collaborated with a team of 5 student filmmakers to produce a short documentary addressing food insecurity in Iowa, 
+                spotlighting the Empty Bowls event as a community-driven solution to inspire audience engagement. During this project I:</p>
+            <p class="project_text">• Co-led a 45-minutes interview with Empty Bowls Grinnell founders Jane Mertens and Cecilia Knight, shaping 
+                the narrative through their insights.
+            </p>
+            <p class="project_text">• Managed production workflow, coordinating team meetings resulting in filming 200+ A-roll and B-roll clips.
+            </p>
+            <p class="project_text">• Structuring 30+ minutes of interview material, adjusted sound, improved flow through compositing and editing techniques,
+                and applyed color-correction for the final cut in Premier Pro.
+            </p>
+            <p class="project_text">• Worked with lavalier microphones, zoom recorders, professional cameras, and lights to achieve the high-quality picture and sound.
+            </p>
+        </div>
+    </div>
+
+    <p class="space"> &nbsp </p>
+
+    <p class="project_title custom_underline">J.B. Grinnell Is Back</p>
+    <p class="responsibilities"><span style="font-weight:bold">Role: </span> Film Director</p>
+    <div class="films_container">
+            <iframe class="film" src="https://www.youtube.com/embed/yf53uq9JE5o?si=M1VPDjFuJ9yUWg77" title="Empty Bowls" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="film_info">
+            <p class="project_subtitles">Process</p>
+            <p class="project_text">For this film, I co-directed a 10-minutes horror-comedy film and oversaw all creative and technical aspects of 
+                a supernatural comedy short film, guiding a team of 15 cast and crew members from pre-production to post-production. During this 
+                project I:</p>
+            <p class="project_text">• Storyboarded and documented 100+ shots for 10+ scenes, shaping the film's visual storytelling and comedic tone to develop 
+                J.B. Grinnell's character, balancing history with modern comedic appeal to resonate with the target audience.
+            </p>
+            <p class="project_text">• Oversaw shot composition, camera movements, and blocking, collaborating with the Directors of Photography 
+                while managing on-location problem-solving for an efficient workflow.
+            </p>
+            <p class="project_text">• Directed the collaborative work of actors, sound, lighting, and cinematographers crews accumulating 90+ minutes
+                of useable footage over 4 days for the editor. 
+            </p>
+        </div>
+    </div>
+</div>
+
+    <!---Footer-->
+
+  <div class="bottom_contact">
+    <div class="icons_footer">
+      <a href="mailto:mariia.minieieva@gmail.com">
+        <img id="email" src="images/email_icon.svg" alt="" class="icon_footer">
+      </a>
+      <a href="https://www.linkedin.com/in/minieieva/">
+        <img id="linkedin" src="images/linkedin_icon.svg" alt="" class="icon_footer">
+      </a>
+    </div>
+    <footer>
+      <p>Crafted by Mariia Minieieva</p>
+    </footer>
+  </div>
+  <script>
+    const mobileBtn = document.getElementById('mobile_cta')
+          nav = document.getElementById('navigation')
+          mobileBtnExit = document.getElementById('mobile_exit');
+              figure1 = document.getElementById('figure_pr1');
+              figure2 = document.getElementById('figure_pr2');
+              figure3 = document.getElementById('figure_pr3');
+              figure4 = document.getElementById('figure_pr4');
+              figure5 = document.getElementById('figure_pr5');
+              figure6 = document.getElementById('figure_pr6');
+          icons = document.getElementById('icon_footer');
+  
+    mobileBtn.addEventListener('click', () => {
+        nav.classList.add('menu-btn');
+        mobileBtnExit.classList.add('exit-btn');
+        mobileBtn.classList.add('hide-burger');
+            figure1.classList.add('figure-show1');
+            figure2.classList.add('figure-show2');
+            figure3.classList.add('figure-show3');
+            figure4.classList.add('figure-show4');
+            figure5.classList.add('figure-show5');
+            figure6.classList.add('figure-show6');
+        email.classList.add('email');
+        linkedin.classList.add('linkedin');
+  
+    })
+  
+    mobileBtnExit.addEventListener('click', () => {
+         nav.classList.remove('menu-btn');
+         mobileBtnExit.classList.remove('exit-btn');
+        mobileBtn.classList.remove('hide-burger');
+            figure1.classList.remove('figure-show1');
+            figure2.classList.remove('figure-show2');
+            figure3.classList.remove('figure-show3');
+            figure4.classList.remove('figure-show4');
+            figure5.classList.remove('figure-show5');
+            figure6.classList.remove('figure-show6');
+        email.classList.remove('email');
+        linkedin.classList.remove('linkedin');
+     })
+  </script>
+  
+<!-- Removing splash animation when clicking on WORK -->
+  <script>
+    document.getElementById('work-link').addEventListener('click', function(event) {
+      event.preventDefault();
+      sessionStorage.setItem('skipAnimation', 'true'); 
+      window.location.href = 'index.html';
+    });
+    </script>
+
+  </body>
+  </html>
