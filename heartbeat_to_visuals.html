@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name = "keywords" content="3D artist, art portfolio, Houdini">
+    <meta name="description" content="3D Artist Mariia Minieieva. Art Portfolio.">
+    <title>minieieva</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="container">
+        <!-- Mobile Navigation -->
+        <div class="mobile_nav">
+          <a href="index.html">
+            <img id="logo_id" src="images/minieieva_logo_black.png" alt="Logo" class="logo_mobile">
+          </a>
+          <img id="mobile_cta" class="mobile_menu" src="images/menu.svg" alt="Open Menu">
+        </div>
+        
+        
+        <!-- Desktop Navigation -->
+        <div class="desktop_nav">
+            <a href="index.html">
+              <img id="logo_id" src="images/minieieva_logo_black.png" alt="Logo" class="logo">
+            </a>
+            <img id="mobile_exit" class="mobile_menu_exit" src="images/exit.svg" alt="Close Navigation">
+            <div id ="navigation" class="navigation_mobile">
+              <ul class="primary_nav">
+                <li><a id="work-link" class="items_nav" href="index.html">WORK</a></li>
+                <!-- <li><a class="items_nav" href="about.html">ABOUT</a></li> -->
+                <li><a class="items_nav" href="contact.html">CONTACT</a></li>
+              </ul>
+            </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="general_project_body">
+    <!---Content-->
+    <p class="project_title custom_underline">Heartbeat to Visuals
+</p>
+    <p class="responsibilities"><span>Responsibilities: </span>Signal Capture with Arduino, Particles simulation, Data Pocessing, Data Visualization</p>
+    
+    <p class="project_subtitles">Overview</p>
+    <p class="project_text">This project was inspired by the challenge of making invisible physiological signals—like the 
+        heartbeat—something people can directly perceive. Instead of presenting data as numbers or charts, I translate heartbeat into 
+        real-time visuals and sound, making scientific information more intuitive and engaging.
+
+    </p>
+    <div class="images">
+      <img src="projects/Hertbeat to Visuals/Test_case1.png" alt="" class="general_pic general_pic_main">
+      <video controls class="general_pic general_pic_main"><source src="projects/Hertbeat to Visuals/video.mp4" type="video/mp4" alt="The Heartbeat Animation"></video>
+    </div>
+
+    <p class="project_subtitles">Goals</p>
+    <ul>
+        <li><p class="project_text"><b>Accessible Science Communication.</b> I transform physiological data into audiovisual experiences to 
+            make scientific concepts tangible through art.
+        </p>
+        </li>
+        <li><p class="project_text"><b>Human-Computer Interaction.</b> I explored heartbeat as a new kind of interface, where the body itself 
+            drives interaction with visuals and sound.
+        </p>
+        </li>
+    </ul>
+    
+    <p class="project_subtitles">Heartbeat Capture</p>
+    <p class="project_text">A pulse sensor connected through an Arduino reads the signal, processes BPM and IBI in Arduino IDE, and 
+        streams them to the computer. The values are sent over USB as simple data that TouchDesigner can use in real time.
+    </p>
+    <p class="project_text">In greater details:</p>
+        <ul>
+            <li><p class="project_text">A Pulse Sensor works by shining a green light onto a thin part of your body. When the light travels through your skin, 
+                some of it gets absorbed by your blood, and the rest bounces back. The Pulse Sensor has a special part called a 
+                photodetector that measures how much light returns.</p></li>
+            <li>The sensor is powered through the development board. It connects to it with a 5V power input, Ground pin, and other 
+                analog input pin that carries the signal.</li>
+            <li>The board connects to the laptop through HDMI, where in Arduino IDE I compile and run the code that processes the signal 
+                data and allows the heartbeat sensor to communicate with TouchDesigner. I use the Pulse Sensor library. Inside the 
+                Arduino loop, the sensor is updated in real time, and then two values are calculated: the beats per minute, or BPM, and 
+                the inter-beat interval, or IBI, which is the time between individual heartbeats. These numbers are then sent over USB 
+                to the computer in a simple CSV (Comma-Separated Values) format, so TouchDesigner can read them easily. The short delay 
+                at the end keeps the updates running smoothly at about 50 times per second.</li>
+                <li>The Serial node inside TouchDesigner receives the data from the specified port and puts it into a table.</li>
+        </ul>
+    <div class="images">
+    <img src="projects/Hertbeat to Visuals/Hardware_pipeline.PNG" alt="" class="general_pic">
+    </div>
+
+    <p class="project_subtitles_lv2">Data Processing & Visualization</p>
+        <p class="project_text">In TouchDesigner, the ParticleGPU node drives the visuals. It spawns particles, applies forces, and maps 
+          heartbeat data onto movement, color, and audio.
+    </p>
+    <ul>
+      <li>BPM changes color, force size, birth rate, and sound tempo.
+      </li>
+      <li>IBI controls particle speed.
+      </li>
+      <li>At higher BPM, particles accelerate, more are generated, spread wider, and audio and visuals' color mimic the intensity of a 
+        racing pulse.
+      </li>
+      <li>Post-processing adds bloom, text for BPM/IBI, and a feedback loop that creates depth by layering frames with decreasing opacity.
+      </li>
+    </ul>
+    <div class="images special_margin">
+      <img src="projects/Hertbeat to Visuals/Data Processing Pipeline.jpg" alt="" class="general_pic">
+      <img src="projects/Hertbeat to Visuals/full_pipeline.png" alt="" class="general_pic">
+    </div>
+      <p class="project_subtitles">Custom Velocity Lookup Table</p>
+      <p class="project_text">One highlight is the custom velocity lookup table. This defines how turbulence changes as particles speed up:</p>
+      <ul>
+        <li>At low velocity, turbulence is subtle, keeping particles close to the source.</li>
+        <li>At medium velocity, turbulence increases, creating branching, neuron-like flows.</li>
+        <li>At high velocity, turbulence becomes chaotic and flickering, giving the structure its energetic quality.</li>
+        <li>This gradual interpolation is what produces the system's distinctive organic motion.</li>
+      </ul>
+      </p>
+      <div class="images">
+        <img src="projects/Hertbeat to Visuals/Velocity_lookup.png" alt="" class="general_pic">
+      </div>
+
+    <p class="project_subtitles">Relevance</p>
+    <p class="project_text">This work is applicable in education, healthcare, and immersive installations. In education, the system 
+      transforms abstract physiological data into visuals and sounds that students can intuitively grasp. In healthcare, the approach 
+      can support biofeedback and mindfulness by giving patients immediate, sensory ways to monitor and regulate their own physiological 
+      signals. In immersive art, it creates interactive environments where audiences can literally “see and hear” their bodies in real 
+      time, fostering personal connection and curiosity.
+    </p>
+    <p class="project_text">Supports accessibility. Many audiences, including children, neurodiverse learners, and people with low 
+      literacy or vision impairments, can struggle with numbers, graphs, or text. My approach offers non-numerical, non-textual, 
+      representation of data, which reaches broader and more diverse audiences.
+    </p>
+    <div class="images">
+      <img src="projects/Hertbeat to Visuals/conference_presentation.jpg" alt="" class="general_pic">
+    </div>
+
+    <p class="project_subtitles">Future Directions</p>
+    <p class="project_text">As I continue my research I plan to firstly, expand the physiological inputs using the Arduino and proximity 
+      sensor, depth camera to track body movements hand gestures. Secondly, I want to conduct studies among students and professors 
+      to measure understanding, reflection, and engagement. This will help me assess the real impact my project can have in different 
+      sectors. Finally, I want to encourage cross-disciplinary collaborations in the field of arts and science. I would like to work 
+      with scientists and artists to refine mappings between data and expression.
+    </p>
+
+    <p class="project_subtitles">Challenges and learning outcomes</p>
+    <p class="project_text">One of the main challenges in this project was achieving a stronger sense of depth in the particle system.</p>
+    <p class="project_text">Initially, the particles generated by the Particle GPU appeared too flat, existing on a single visual layer. I wanted 
+      the structure to feel more three-dimensional and volumetric without losing the delicate branching form I had already built. Increasing 
+      the birth rate added density but didn't create the illusion of space I was aiming for. The solution was to introduce a feedback loop 
+      that layers each frame with slightly reduced opacity—about a 10% decrease per frame—creating subtle visual trails that accumulate over 
+      time. This approach gave the particles a soft, immersive depth effect while preserving the original geometry and overall flow of the 
+      system.
+    </p>
+    <div class="images special_margin">
+      <img src="projects/Hertbeat to Visuals/feedback_loop.png" alt="" class="general_pic">
+    </div>
+    <div class="images special_margin">
+      <figure><img src="projects/Hertbeat to Visuals/before_feedback.png" alt="" class="general_pic">
+        <figcaption>Before feedback</figcaption>
+      </figure>
+      <figure><img src="projects/Hertbeat to Visuals/after_feedback.png" alt="" class="general_pic">
+        <figcaption>After feedback</figcaption>
+      </figure>
+    </div>   
+        </div>
+    <!---Footer-->
+
+  <div class="bottom_contact">
+    <div class="icons_footer">
+      <a href="mailto:mariia.minieieva@gmail.com">
+        <img id="email" src="images/email_icon.svg" alt="" class="icon_footer">
+      </a>
+      <a href="https://www.linkedin.com/in/minieieva/">
+        <img id="linkedin" src="images/linkedin_icon.svg" alt="" class="icon_footer">
+      </a>
+    </div>
+    <footer>
+      <p>Crafted by Mariia Minieieva</p>
+    </footer>
+  </div>
+  
+  <script>
+    const mobileBtn = document.getElementById('mobile_cta')
+          nav = document.getElementById('navigation')
+          mobileBtnExit = document.getElementById('mobile_exit');
+              figure1 = document.getElementById('figure_pr1');
+              figure2 = document.getElementById('figure_pr2');
+              figure3 = document.getElementById('figure_pr3');
+              figure4 = document.getElementById('figure_pr4');
+              figure5 = document.getElementById('figure_pr5');
+              figure6 = document.getElementById('figure_pr6');
+              figure7 = document.getElementById('figure_pr7');
+          icons = document.getElementById('icon_footer');
+  
+    mobileBtn.addEventListener('click', () => {
+        nav.classList.add('menu-btn');
+        mobileBtnExit.classList.add('exit-btn');
+        mobileBtn.classList.add('hide-burger');
+            figure1.classList.add('figure-show1');
+            figure2.classList.add('figure-show2');
+            figure3.classList.add('figure-show3');
+            figure4.classList.add('figure-show4');
+            figure5.classList.add('figure-show5');
+            figure6.classList.add('figure-show6');
+            figure7.classList.add('figure-show7');
+        email.classList.add('email');
+        linkedin.classList.add('linkedin');
+  
+    })
+  
+    mobileBtnExit.addEventListener('click', () => {
+         nav.classList.remove('menu-btn');
+         mobileBtnExit.classList.remove('exit-btn');
+        mobileBtn.classList.remove('hide-burger');
+            figure1.classList.remove('figure-show1');
+            figure2.classList.remove('figure-show2');
+            figure3.classList.remove('figure-show3');
+            figure4.classList.remove('figure-show4');
+            figure5.classList.remove('figure-show5');
+            figure6.classList.remove('figure-show6');
+            figure7.classList.remove('figure-show7');
+        email.classList.remove('email');
+        linkedin.classList.remove('linkedin');
+     })
+  
+  </script>
+  
+  <!-- Removing splash animation when clicking on WORK -->
+  <script>
+    document.getElementById('work-link').addEventListener('click', function(event) {
+      event.preventDefault();
+      sessionStorage.setItem('skipAnimation', 'true'); 
+      window.location.href = 'index.html';
+    });
+    </script>
+
+  </body>
+  </html>

@@ -5,8 +5,8 @@
   --small-text: 1vw;
   --medium-text: 1.2vw;
   --large-text: 2vw;
-  --small-text-mobile: 2vw;
-  --medium-text-mobile: 2.4vw;
+  --small-text-mobile: 3vw;
+  --medium-text-mobile: 3.5vw;
   --large-text-mobile: 4vw;
 }
 
@@ -20,7 +20,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2vw 0px 0px 0px;
+  padding: 1vw 0px 0px 0px;
 }
 header .container {
   display: flex;
@@ -39,7 +39,8 @@ header .container ul {
 }
 header .container ul li {
   text-align: center;
-  margin: 0.8vw;
+  margin: 0 0.8vw 0 0.8vw;
+  margin-top: 0;
 }
 header .container ul .current {
   font-weight: bold;
@@ -88,6 +89,8 @@ video::-webkit-media-controls-start-playback-button {
 .contentWrapper {
   display: flex;
   gap: 15px;
+  margin-left: 8vw;
+  margin-right: 8vw;
 }
 .contentWrapper .column {
   display: flex;
@@ -551,6 +554,8 @@ input[type=submit]:hover {
   .contentWrapper {
     grid-template-columns: 1fr;
     margin-top: 15vw;
+    margin-left: 0vw;
+    margin-right: 0vw;
   }
   .contentWrapper .box {
     margin-bottom: auto;
