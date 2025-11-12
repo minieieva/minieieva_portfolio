@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name = "keywords" content="3D artist, art portfolio, Houdini">
+    <meta name="description" content="3D Artist Mariia Minieieva. Art Portfolio.">
+    <title>minieieva</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="container">
+        <!-- Mobile Navigation -->
+        <div class="mobile_nav">
+          <a href="index.html">
+            <img id="logo_id" src="images/minieieva_logo_black.png" alt="Logo" class="logo_mobile">
+          </a>
+          <img id="mobile_cta" class="mobile_menu" src="images/menu.svg" alt="Open Menu">
+        </div>
+        
+        
+        <!-- Desktop Navigation -->
+        <div class="desktop_nav">
+            <a href="index.html">
+              <img id="logo_id" src="images/minieieva_logo_black.png" alt="Logo" class="logo">
+            </a>
+            <img id="mobile_exit" class="mobile_menu_exit" src="images/exit.svg" alt="Close Navigation">
+            <div id ="navigation" class="navigation_mobile">
+              <ul class="primary_nav">
+                <li><a id="work-link" class="items_nav" href="index.html">WORK</a></li>
+                <!-- <li><a class="items_nav" href="about.html">ABOUT</a></li> -->
+                <li><a class="items_nav" href="contact.html">CONTACT</a></li>
+              </ul>
+            </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="general_project_body">
+    <!---Content-->
+    <p class="project_title custom_underline">I See You
+</p>
+    <p class="responsibilities"><span>Responsibilities: </span>Proximity Capture with Arduino, Procedural 3D modeling, Particle Simulation, Data Processing, Data Visualization, PBR material</p>
+    
+    <p class="project_subtitles">Overview</p>
+    <p class="project_text">This project mirrors how real-world surveillance often operates: quietly, invisibly, 
+        and without consent by using proximity sensing to trigger both visible changes and hidden system behavior. 
+        It creates a layered experience: the viewer believes they're in control through a visible slider, but the 
+        system is already reacting before any input.It invites viewers to confront how easily their presence can be 
+        tracked—without flashy alerts or obvious prompts. 
+    </p>
+    <div class="images">
+      <img src="projects/I See You/cover_main.png" alt="" class="general_pic general_pic_main">
+      <video controls class="general_pic general_pic_main"><source src="projects/I See You/video_cover.mp4" type="video/mp4" alt="I See You video"></video>
+    </div>
+
+    <p class="project_subtitles">Goals</p>
+    <ul>
+        <li><p class="project_text"><b>Data Ethics Awareness.</b> I visualize the hidden dynamics of surveillance
+             to reveal how data collection often occurs without explicit consent, prompting reflection on digital privacy.
+        </p>
+        </li>
+        <li><p class="project_text"><b>Human-Computer Interaction.</b> I explore proximity as an interactive medium, where 
+            a viewer's physical presence triggers both visible and concealed system responses.
+        </p>
+        </li>
+    </ul>
+    
+    <p class="project_subtitles">Proximity Capture</p>
+    <p class="project_text">A proximity sensor connected through an Arduino reads the signal, processes distance 
+        in centimeters in Arduino IDE, and streams it to the computer. The values are sent over USB as simple 
+        data that TouchDesigner can use in real time.
+    </p>
+    <p class="project_text">In greater details:</p>
+        <ul>
+            <li><p class="project_text">A proximity sensor works by sending out an ultrasonic sound wave through its transmitter and 
+                waiting for the echo to return after bouncing off a nearby object. It then measures the time the echo takes 
+                to come back to calculate the object's distance from the sensor.</p></li>
+            <li>The sensor is powered through the development board. It connects to it with a 5V power input, Ground pin,Trigger, 
+                and Echo.</li>
+            <li>The board connects to the laptop through USB, where in Arduino IDE I compile and run the code that processes 
+                the distance data and allows the proximity sensor to communicate with TouchDesigner. Inside the Arduino loop, 
+                the sensor continuously sends an ultrasonic pulse and measures the time it takes for the echo to return, 
+                converting it into distance in centimeters. These values are then sent over USB to the computer in a simple 
+                text format, so TouchDesigner can read them easily. The short delay at the end keeps the updates running 
+                smoothly at about 16 times per second.</li>
+                <li>The Serial node inside TouchDesigner receives the data from the specified port and puts it into a table.</li>
+        </ul>
+    <div class="images">
+    <img src="projects/I See You/proximity_capture.PNG" alt="" class="general_pic">
+    </div>
+
+    <p class="project_subtitles_lv2">Data Processing & Visualization</p>
+        <p class="project_text">In TouchDesigner, proximity data drive the eye's color transformation, activating when the 
+            viewer engages with the secondary interaction that controls the anxiety level on the slider.
+        </p>
+        <p class="project_text">
+            <b>Eye:</b> The base eye geometry is generated by twisting a torus. Its surface uses a PBR material enhanced with subtle, 
+            animated noise affecting the height, normal, and color maps. A ramp node produces a striped, three-color palette 
+            (black and two supporting hues) that shift dynamically.
+        </p>
+        <p class="project_text">
+            <b>Tears:</b> A particle simulation emits from a semicircular source precisely aligned with the eye pupil to simulate 
+            tears.
+        </p>
+    <ul>
+      <li>Proximity influences the hue, causing the color to shift as the viewer approaches.
+      </li>
+      <li>Slider interaction controls the turbulence and density of the particles.
+      </li>
+    </ul>
+        <p class="project_text">
+            Post-processing adds watercolor blur in a layered feedback, making tears look more washed, like a waterfall instead 
+            of straight on lines, making experience more believable.
+        </p>
+    <div class="images special_margin">
+      <img src="projects/I See You/setup_simplified.jpg" alt="" class="general_pic">
+      <img src="projects/I See You/td_network.png" alt="" class="general_pic">
+    </div>
+
+    <p class="project_subtitles">Relevance</p>
+    <p class="project_text">This work can support learning in classrooms, provoke dialogue in public installations, and inform 
+        ethical design in tech development. In education, especially media and digital ethics courses, it offers a hands-on way 
+        to explore surveillance where students don't just learn about data tracking; they experience it. The hidden interaction 
+        makes complex ideas about consent and visibility understandable.
+    </p>
+    <p class="project_text">In gallery or museum settings, it draws viewers in with visual intrigue, prompting reflection on 
+        their own digital footprints. For designers and developers working in UX, HCI, or smart tech, it acts as a critique: 
+        a reminder that just because interaction is invisible doesn't mean it's neutral.
+    </p>
+
+    <p class="project_subtitles">Challenges and learning outcomes</p>
+    <p class="project_text">One of the main challenges was combining the particle simulation with the 3D eye geometry.</p>
+    <p class="project_text">I initially started with a familiar approach using the Particle GPU and force operators, but ran 
+        into a few issues. The particle source could only be easily defined using default shapes, which made it difficult to 
+        create a semicircular spawn area that aligned with the eye. More critically, I couldn't find a way to properly combine 
+        the 3D geometry and 2D Particle GPU output within a single Render TOP—because the GPU particles don't render through 
+        the standard 3D render pipeline, they appear as a separate layer and break the spatial coherence.
+    </p>
+    <p class="project_text">To solve this, I rebuilt the simulation using Particle SOPs instead. This allowed both the 3D 
+            eye model and the particle system to be processed through the same render pipeline. I then aligned and composed 
+            them from the camera's point of view to make the output appear unified. As a nice side effect, the emission angle 
+            of the tears shifted slightly toward the viewer, adding unexpected depth and emotional intensity to the piece.
+    </p>
+    <div class="images">
+      <figure><img src="projects/I See You/combination.png" alt="" class="general_pic">
+        <figcaption>Scene Side View</figcaption>
+      </figure>
+    </div>   
+    <!---Footer-->
+
+  <div class="bottom_contact">
+    <div class="icons_footer">
+      <a href="mailto:mariia.minieieva@gmail.com">
+        <img id="email" src="images/email_icon.svg" alt="" class="icon_footer">
+      </a>
+      <a href="https://www.linkedin.com/in/minieieva/">
+        <img id="linkedin" src="images/linkedin_icon.svg" alt="" class="icon_footer">
+      </a>
+    </div>
+    <footer>
+      <p>Crafted by Mariia Minieieva</p>
+    </footer>
+  </div>
+  
+  <script>
+    const mobileBtn = document.getElementById('mobile_cta')
+          nav = document.getElementById('navigation')
+          mobileBtnExit = document.getElementById('mobile_exit');
+              figure1 = document.getElementById('figure_pr1');
+              figure2 = document.getElementById('figure_pr2');
+              figure3 = document.getElementById('figure_pr3');
+              figure4 = document.getElementById('figure_pr4');
+              figure5 = document.getElementById('figure_pr5');
+              figure6 = document.getElementById('figure_pr6');
+              figure7 = document.getElementById('figure_pr7');
+          icons = document.getElementById('icon_footer');
+  
+    mobileBtn.addEventListener('click', () => {
+        nav.classList.add('menu-btn');
+        mobileBtnExit.classList.add('exit-btn');
+        mobileBtn.classList.add('hide-burger');
+            figure1.classList.add('figure-show1');
+            figure2.classList.add('figure-show2');
+            figure3.classList.add('figure-show3');
+            figure4.classList.add('figure-show4');
+            figure5.classList.add('figure-show5');
+            figure6.classList.add('figure-show6');
+            figure7.classList.add('figure-show7');
+        email.classList.add('email');
+        linkedin.classList.add('linkedin');
+  
+    })
+  
+    mobileBtnExit.addEventListener('click', () => {
+         nav.classList.remove('menu-btn');
+         mobileBtnExit.classList.remove('exit-btn');
+        mobileBtn.classList.remove('hide-burger');
+            figure1.classList.remove('figure-show1');
+            figure2.classList.remove('figure-show2');
+            figure3.classList.remove('figure-show3');
+            figure4.classList.remove('figure-show4');
+            figure5.classList.remove('figure-show5');
+            figure6.classList.remove('figure-show6');
+            figure7.classList.remove('figure-show7');
+        email.classList.remove('email');
+        linkedin.classList.remove('linkedin');
+     })
+  
+  </script>
+  
+  <!-- Removing splash animation when clicking on WORK -->
+  <script>
+    document.getElementById('work-link').addEventListener('click', function(event) {
+      event.preventDefault();
+      sessionStorage.setItem('skipAnimation', 'true'); 
+      window.location.href = 'index.html';
+    });
+    </script>
+
+  </body>
+  </html>
