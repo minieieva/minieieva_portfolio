@@ -22,7 +22,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2vw 0px 0px 0px;
+  padding: 1vw 0px 0px 0px;
 
   .container{
     display: flex;
@@ -42,7 +42,8 @@ header {
 
         li{
           text-align: center;
-          margin: 0.8vw;
+          margin-left: 0.8vw;
+          margin-right: 0.8vw;
 
           
         }
@@ -112,6 +113,8 @@ transition: opacity 0.3s ease-out;
       //height: auto;
       display: flex;
       gap: 15px;
+      margin-left: 7vw;
+      margin-right: 7vw;
 
       .column{
         display: flex;
@@ -414,8 +417,15 @@ margin-right: 2.5vw;
   span{
   font-weight: bold;
   }
+
 }
 
+.two_columns {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  column-gap: 5vw;
+  font-size: var(--small-text);
+}
 
 .project_subtitles{
 margin-top: 2vw;
@@ -820,6 +830,10 @@ margin-bottom: -0.5vw;
       font-size: var(--medium-text-mobile);
     
     }
+
+  .two_columns {
+    font-size: var(--small-text-mobile);
+  }
     
     .project_subtitles{
     font-size: var(--medium-text-mobile);

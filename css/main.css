@@ -5,8 +5,8 @@
   --small-text: 1vw;
   --medium-text: 1.2vw;
   --large-text: 2vw;
-  --small-text-mobile: 3vw;
-  --medium-text-mobile: 3.5vw;
+  --small-text-mobile: 2vw;
+  --medium-text-mobile: 2.4vw;
   --large-text-mobile: 4vw;
 }
 
@@ -39,8 +39,8 @@ header .container ul {
 }
 header .container ul li {
   text-align: center;
-  margin: 0 0.8vw 0 0.8vw;
-  margin-top: 0;
+  margin-left: 0.8vw;
+  margin-right: 0.8vw;
 }
 header .container ul .current {
   font-weight: bold;
@@ -89,8 +89,8 @@ video::-webkit-media-controls-start-playback-button {
 .contentWrapper {
   display: flex;
   gap: 15px;
-  margin-left: 8vw;
-  margin-right: 8vw;
+  margin-left: 7vw;
+  margin-right: 7vw;
 }
 .contentWrapper .column {
   display: flex;
@@ -344,6 +344,12 @@ input[type=submit]:hover {
 .general_project_body .responsibilities span {
   font-weight: bold;
 }
+.general_project_body .two_columns {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  column-gap: 5vw;
+  font-size: var(--small-text);
+}
 .general_project_body .project_subtitles {
   margin-top: 2vw;
   font-size: var(--medium-text);
@@ -554,8 +560,6 @@ input[type=submit]:hover {
   .contentWrapper {
     grid-template-columns: 1fr;
     margin-top: 15vw;
-    margin-left: 0vw;
-    margin-right: 0vw;
   }
   .contentWrapper .box {
     margin-bottom: auto;
@@ -658,6 +662,9 @@ input[type=submit]:hover {
   }
   .general_project_body .responsibilities {
     font-size: var(--medium-text-mobile);
+  }
+  .general_project_body .two_columns {
+    font-size: var(--small-text-mobile);
   }
   .general_project_body .project_subtitles {
     font-size: var(--medium-text-mobile);
