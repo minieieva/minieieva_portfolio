@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name = "keywords" content="3D artist, art portfolio, Houdini">
+    <meta name="description" content="3D Artist Mariia Minieieva. Art Portfolio.">
+    <title>minieieva</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="container">
+        <!-- Mobile Navigation -->
+        <div class="mobile_nav">
+          <a href="index.html">
+            <img id="logo_id" src="images/minieieva_logo_black.png" alt="Logo" class="logo_mobile">
+          </a>
+          <img id="mobile_cta" class="mobile_menu" src="images/menu.svg" alt="Open Menu">
+        </div>
+        
+        
+        <!-- Desktop Navigation -->
+        <div class="desktop_nav">
+            <a href="index.html">
+              <img id="logo_id" src="images/minieieva_logo_black.png" alt="Logo" class="logo">
+            </a>
+            <img id="mobile_exit" class="mobile_menu_exit" src="images/exit.svg" alt="Close Navigation">
+            <div id ="navigation" class="navigation_mobile">
+              <ul class="primary_nav">
+                <li><a id="work-link" class="items_nav" href="index.html">WORK</a></li>
+                <!-- <li><a class="items_nav" href="about.html">ABOUT</a></li> -->
+                <li><a class="items_nav" href="contact.html">CONTACT</a></li>
+              </ul>
+            </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="general_project_body">
+    <!---Content-->
+    <p class="project_title custom_underline">Bunny Dies
+</p>
+    <div class="responsibilities">
+    <span>Responsibilities:</span>
+    <p class="project_text">shared with 2 team members Lilia Bellahcen and Maya Kalenak</p>
+    <ul class="two_columns">
+        <li>Unity & C# coding</li>
+        <li>Ideation and Concept</li>
+        <li>Game Design</li>
+        <li>Game Mechanics</li>
+        <li>Level Design</li>
+        <li>UI and Game feel</li>
+    </ul>
+    </div>
+        
+    <p class="project_subtitles">Overview</p>
+    <p class="project_text">BunnyDies is a rage-bait puzzle game where the player must solve box-pushing puzzles to advance the bunny character to 
+      the next level. The game consists of 5 levels of increasing complexity in box mechanics, with each level introducing a new mechanic while 
+      expanding on the previous ones.
+    </p>
+    <p class="project_text">The player controls a bunny navigating through a tile-based environment filled with falling blocks, 
+      and other traps. The main goal of each level is to safely reach and collect the cookie while avoiding death.
+    </p>
+    <p class="project_text">The project was developed in Unity using C#, with a strong focus on puzzle progression, player frustration, and responsive game feel.
+    </p>
+    <div class="images special_margin">
+      <img src="projects/BunnyDies/bunnydies_level5.png" alt="Level 5" class="general_pic general_pic_main">
+      <video controls class="general_pic general_pic_main"><source src="projects/BunnyDies/bunnydies_level1_play.mp4" type="video/mp4" alt="Level 1 play"></video>
+    </div>
+
+    <p class="project_subtitles">Goals</p>
+    <p class="project_text">I was primarily involved in ideation, level design, UI and game feel, as well as implementation of the box sliding 
+      mechanics and code implementation of 2 levels.</p>
+    <p class="project_text">My goals for this game were:</p>
+    <ul>
+        <li><p class="project_text">Create a simple but challenging puzzle experience focused on trial-and-error gameplay
+        </p></li>
+        <li><p class="project_text">Design levels that progressively teach mechanics while maintaining player engagement
+        </p></li>
+        <li><p class="project_text">Improve my understanding of game feel through animation, sound feedback, and responsive controls
+        </p></li>
+    </ul>
+        <div class="images special_margin">
+      <img src="projects/BunnyDies/bunnydies_challenges_sketch.jpg" alt="Possible challanges sketch" class="general_pic">
+      <img src="projects/BunnyDies/bunnydies_level5_sketch.jpeg" alt="Level 5 sketch" class="general_pic">
+    </div>
+    
+    <p class="project_subtitles">The Typical Player Profile</p>
+        <ul class="two_columns">
+        <li>15 years old</li>
+        <li>When they get bored, even in class, like to play short games online without getting too distracted from studying</li>
+        <li>Loves a good challenge</li>
+        <li>Highly determined and persistent, which translates into gameplay</li>
+        <li>Enjoys small “rage” moments</li>
+        <li>Experiences frustration but keeps trying</li>
+    </ul>
+
+    <p class="project_subtitles">Rage-Bait & Puzzle Game</p>
+        <p class="project_text">BunnyDies combines puzzle-solving mechanics with rage-bait design principles. The game intentionally creates 
+          moments of surprise and frustration through unexpected obstacles, falling hazards, and misleading level setups. However, these moments 
+          are balanced with short levels, quick retries, and readable mechanics to encourage the player to continue trying.
+        </p>
+        <p class="project_text">The puzzle design relies on experimentation and observation. Players learn through failure while gradually 
+          understanding how different box types, traps, and environmental mechanics interact with one another.
+        </p>
+        <p class="project_text">The rage-bait aspect is especially visible in later levels, where mechanics intentionally subvert player 
+          expectations after they believe they understand the system.
+        </p>
+    <div class="images">
+      <figure>
+      <video controls class="general_pic general_pic_main"><source src="projects/BunnyDies/bunnydies_level2_play.mp4" type="video/mp4" alt="Level 2 play"></video>
+
+      <figcaption>Level 2</figcaption>
+      </figure>
+    </div>
+      <p class="project_subtitles">Core Loop Mechanics</p>
+      <p class="project_text">Key Methods:</p>
+      <ul>
+        <li>WorldToCell()</li>
+        <li>GetCellCenterWorld()</li>
+        <li>Cardinal()</li>
+      </ul>
+      <p class="project_text">The game uses a grid-based movement system implemented through Unity Tilemaps. The player movement converts world 
+        positions into grid cells using WorldToCell(), allowing movement to remain aligned to the tile grid.
+      </p>
+      <p class="project_text">The Cardinal() method restricts player movement to four directions by converting analog input into cardinal movement. 
+        This creates precise puzzle navigation and prevents diagonal movement that could break level logic.
+      </p>
+      <p class="project_text">GetCellCenterWorld() is used to reposition the player and movable blocks directly to the center of grid cells, 
+        ensuring accurate alignment and collision consistency.
+      </p>
+     <div class="images special_margin">
+      <figure>
+      <img src="projects/BunnyDies/bunnydies_cardinal.png" alt="Cardinal() function" class="general_pic">
+      <figcaption>Cardinal() function</figcaption>
+      </figure>
+      <figure>
+      <img src="projects/BunnyDies/bunnydies_worldtocell.png" alt="WorldToCell() and GetCellCenterWorld() usage" class="general_pic">
+      <figcaption>WorldToCell() and GetCellCenterWorld() usage</figcaption>
+      </figure>
+     </div>
+      <p class="project_text">The gameplay loop is centered around:</p>
+      <ul>
+        <li>Observing the level layout</li>
+        <li>Moving and positioning blocks</li>
+        <li>Avoiding moving hazards</li>
+        <li>Learning through failure</li>
+        <li>Reattempting the puzzle with improved understanding</li>
+      </ul>
+      <p class="project_text">Several mechanics were implemented through coroutines and collision checks, including falling blocks, moving holes, 
+        death sequences, and environmental triggers. These systems helped create dynamic puzzle interactions while maintaining a simple visual 
+        style.
+      </p>
+
+    <p class="project_subtitles">Level Design</p>
+    <p class="project_text">BunnyDies starts with a tutorial level that provides guidance on movement, objectives, and the overall goal while 
+      introducing the core mechanics of box falling, pushing, wall obstacles, and cookie collection.
+    </p>
+    <p class="project_text">Our first level design gives the player a safe space to learn how mechanics work by presenting the two existing box 
+      types in a simple environment. This encourages the player to experiment and understand what happens when interacting with each object. 
+      Walls are introduced only to establish movement boundaries and communicate that certain paths are inaccessible.
+    </p>
+    <figure>
+    <img src="projects/BunnyDies/bunnydies_level1.png" alt="Level1" class="general_pic">
+    <figcaption>Level 1</figcaption>
+    </figure>
+    <p class="project_text">All following levels increase the challenge by expanding on familiar mechanics while introducing additional complexity.
+    </p>
+    <p class="project_text">We used the “Teach, Test, Twist” technique to structure progression:
+        <ul>
+          <li><p class="project_text">Level 1: Teaches the player that there are two types of boxes: falling boxes and pushable boxes. The player learns they can move a pushable box to block a falling one.</p>
+          <li><p class="project_text">Level 2: Allows the player to test these mechanics in a more difficult setup with three boxes instead of two, requiring the player to determine the correct route out of multiple possibilities.</p>
+          <li><p class="project_text">Levels 3-5: Introduce a twist to the falling box mechanic by changing movement directions. Boxes can now fall upward, left, and right as well.</p>
+        </ul>
+      </p>
+      <p class="project_text">In Level 3, we introduce another core mechanic: disappearing tiles triggered when the player approaches the goal. 
+        Since the game follows a rage-bait design philosophy, the trap appears right before the player reaches the cookie, catching them off guard. 
+        This unexpected failure creates a short moment of frustration while encouraging the player to retry and rethink the final obstacle.
+      </p>
+     <div class="images special_margin">
+      <figure>
+      <img src="projects/BunnyDies/bunnydies_level3_trap.png" alt="Level 3 trap" class="general_pic">
+      <figcaption>Level 3 trap</figcaption>
+      </figure>
+      <figure>
+      <video controls class="general_pic general_pic_main"><source src="projects/BunnyDies/bunnydies_level3_play.mp4" type="video/mp4" alt="Level 3 play"></video>
+      <figcaption>Level 3 play</figcaption>
+      </figure>
+     </div>
+
+    <p class="project_subtitles">UI & Game feel</p>
+        <p class="project_text">Our UI is non-diegetic and helps create a smooth gameplay flow. The interface includes a main menu, navigation bar, 
+          level selection menu, transition screens, and a final screen. These systems allow the player to navigate the game, switch between levels, 
+          control sound settings, and receive feedback when completing objectives.
+        </p>
+        <p class="project_text">Additional elements contributing to game feel include sound effects, directional animations, screen fading, and 
+          transitions. These elements provide immediate feedback for player actions such as movement, pushing boxes, collecting cookies, or 
+          getting hit by hazards.
+        </p>
+        <p class="project_text">The bunny movement system was designed to feel responsive and readable. Directional animations communicate movement 
+          clearly, while sound effects reinforce interactions with the environment. Death animations and fade transitions help make failure feel 
+          polished rather than abrupt.
+        </p>
+        <p class="project_text">The combination of visual feedback, short retry loops, and responsive controls supports the rage-bait gameplay 
+          style while keeping the experience engaging rather than punishing.
+        </p>
+    <div class="images special_margin">
+      <img src="projects/BunnyDies/bunnydies_level_selection.png" alt="Level selection" class="general_pic">
+      <img src="projects/BunnyDies/bunnydies_main_menu.png" alt="Main menu" class="general_pic">
+    </div>
+
+    <p class="project_subtitles">Challenges and learning outcomes</p>
+    <p class="project_text">This project was my first fully playable game that needed to incorporate many game design principles ranging from ideation to user testing and iteration.</p>
+    <p class="project_text">Major challenges included:</p>
+    <ul class="project_text">
+        <li>Designing puzzles that were difficult without becoming unfair</li>
+        <li>Creating grid-based movement and interaction systems using Tilemaps</li>
+        <li>Balancing frustration and enjoyment within a rage-bait gameplay style</li>
+        <li>Coordinating gameplay systems and responsibilities within a team environment</li>
+    </ul>
+    <p class="project_text">One of the biggest technical challenges was implementing the falling block system. The blocks needed to react 
+      dynamically to player position, move correctly within the tile grid, stop on collision, and trigger death animations when hitting the player.
+    </p>
+    <p class="project_text">Another challenge was designing levels that naturally taught mechanics without relying too heavily on text instructions. 
+      Through playtesting, we adjusted puzzle layouts and mechanic timing to improve clarity and pacing.
+    </p>
+    <p class="project_text">Through this project, I strengthened my understanding of gameplay programming, level progression, player psychology, 
+      and game feel. I also gained experience working collaboratively in a small development team while building a complete playable game from 
+      concept to final implementation.
+    </p>
+        </div>
+    <!---Footer-->
+
+  <div class="bottom_contact">
+    <div class="icons_footer">
+      <a href="mailto:mariia.minieieva@gmail.com">
+        <img id="email" src="images/email_icon.svg" alt="" class="icon_footer">
+      </a>
+      <a href="https://www.linkedin.com/in/minieieva/">
+        <img id="linkedin" src="images/linkedin_icon.svg" alt="" class="icon_footer">
+      </a>
+    </div>
+    <footer>
+      <p>Crafted by Mariia Minieieva</p>
+    </footer>
+  </div>
+  
+  <!-- Removing splash animation when clicking on WORK -->
+  <script>
+    document.getElementById('work-link').addEventListener('click', function(event) {
+      event.preventDefault();
+      sessionStorage.setItem('skipAnimation', 'true'); 
+      window.location.href = 'index.html';
+    });
+    </script>
+
+  </body>
+  </html>
