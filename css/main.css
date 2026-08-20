@@ -374,11 +374,25 @@ input[type=submit]:hover {
   margin: 0;
   width: 100vw;
 }
+
+.general_project_body .full_width_image {
+  width: 100%;
+  margin: 0;
+}
+
+.general_project_body .full_width_image img {
+  display: block;
+  width: 90%;
+  height: auto;
+}
+
 .general_project_body .images {
   display: flex;
   align-items: center; /* Ensures both images align by height */
   width: 100%;
 }
+
+
 .general_project_body iframe {
   margin-top: 2vw;
   width: 40vw;

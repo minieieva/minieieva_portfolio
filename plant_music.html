@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="3D artist, art portfolio, Houdini">
+  <meta name="description" content="3D Artist Mariia Minieieva. Art Portfolio.">
+  <title>minieieva</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <header>
+    <div class="navbar">
+      <div class="container">
+        <!-- Mobile Navigation -->
+        <div class="mobile_nav">
+          <a href="index.html">
+            <img id="logo_id" src="images/minieieva_logo_black.png" alt="Logo" class="logo_mobile">
+          </a>
+          <img id="mobile_cta" class="mobile_menu" src="images/menu.svg" alt="Open Menu">
+        </div>
+
+
+        <!-- Desktop Navigation -->
+        <div class="desktop_nav">
+          <a href="index.html">
+            <img id="logo_id" src="images/minieieva_logo_black.png" alt="Logo" class="logo">
+          </a>
+          <img id="mobile_exit" class="mobile_menu_exit" src="images/exit.svg" alt="Close Navigation">
+          <div id="navigation" class="navigation_mobile">
+            <ul class="primary_nav">
+              <li><a id="work-link" class="items_nav" href="index.html">WORK</a></li>
+              <!-- <li><a class="items_nav" href="about.html">ABOUT</a></li> -->
+              <li><a class="items_nav" href="contact.html">CONTACT</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="general_project_body">
+    <!---Content-->
+    <p class="project_title custom_underline">Plant Music
+    </p>
+    <div class="responsibilities">
+      <span>Skills & Technology:</span>
+      <ul class="two_columns">
+        <li>C++</li>
+        <li>Arduino</li>
+        <li>Raspberry Pi</li>
+        <li>Circuit Building & Electronics</li>
+        <li>Pure Data Audio Environment</li>
+        <li>3D Modeling (Fusion 360)</li>
+        <li>3D Printing (Bambu Lab)</li>
+      </ul>
+    </div>
+
+    <p class="project_subtitles">Overview</p>
+    <p class="project_text">This device grew out of my interest in climate change and the role of nature and ecology
+      within that problem. From the beginning,
+      I wanted to draw attention to the fact that the natural world around us is living and constantly changing, and to
+      help viewers develop a sense of curiosity
+      and connection to plants by experiencing their activity in a more tangible way.
+    </p>
+    <p class="project_text">I designed and engineered an electronic device that measures changes in plants' electrical
+      activity and translates them into
+      generative ambient music. Because each plant has different physical structures and patterns of water and ion
+      movement, their signals can produce
+      different musical behaviors. Plants with faster internal activity and more variation can generate faster, more
+      unpredictable melodies, while plants
+      with slower or more stable signals tend to produce slower melodies with fewer variations. The system does not
+      measure a single isolated plant function;
+      instead, it responds to changes in electrical conductivity associated with processes such as the movement of ions
+      across cell membranes. The plant
+      becomes part of the circuit, acting as a variable resistor whose changing resistance affects the electrical signal
+      and, consequently, the music.
+      Touching or otherwise interacting with the plant can therefore leave a visible imprint on the resulting sound,
+      connecting human actions to the living system.
+    </p>
+    <p class="project_text">The Arduino analyzes both small natural fluctuations and larger changes in the signal,
+      translating them into MIDI notes and musical
+      parameters such as pitch, velocity, and duration. The MIDI data is then sent to Pure Data, where it is transformed
+      into sound and processed through oscillators,
+      envelopes, and reverb before being sent to the speakers.
+    </p>
+    <div class="images special_margin">
+      <img src="projects/Plant Music/filler_final photo.PNG" alt="Plant Music Installation"
+        class="general_pic general_pic_main">
+      <video controls class="general_pic general_pic_main">
+        <source src="projects/BunnyDies/bunnydies_level1_play.mp4" type="video/mp4" alt="Level 1 play">
+      </video>
+    </div>
+
+    <p class="project_subtitles">Goals</p>
+    <ul>
+      <li>
+        <p class="project_text"><b>Technical:</b> The major technical goal was to build a stable system that could
+          operate consistently in real time without
+          requiring complicated manual calibration. In the earlier version, I had to adjust thresholds manually for
+          different plants and electrode positions,
+          so one of my priorities was to make the system more adaptable. The final system can run continuously for
+          multiple days and can be recalibrated for
+          a different plant with the press of a button, allowing it to adapt to changes in the plant or electrode
+          placement without modifying the code.
+        </p>
+      </li>
+      <li>
+        <p class="project_text"><b>Conceptual:</b> From the conceptual and experiential standpoint, I wanted to create
+          an interaction that was engaging, enjoyable, and meaningful.
+          The finished design incorporates two plants, allowing visitors to physically interact with living organisms
+          while hearing their activity translated
+          into sound. This creates two connected forms of interaction: kinesthetic interaction through touching and
+          engaging with the plants, and audio interaction
+          through the resulting generative music. I wanted the sound to feel calming and immersive while still making
+          the visitor aware that their actions can
+          influence the plant and the resulting composition.
+        </p>
+      </li>
+      <li>
+        <p class="project_text"><b>Integration:</b> Another major goal was to move the project from a functional
+          prototype toward a finished installation. For this version,
+          I wanted the technology to become integrated into the physical object rather than remain the focus of
+          attention. I therefore designed and 3D-printed a
+          custom housing for the pot that conceals the electronics, provides access for maintenance, routes the
+          necessary connections, and incorporates the plant
+          into the overall form. This combination of electronics, software, sound, and physical design was an important
+          part of making the project feel like a
+          complete installation rather than a collection of separate technical components
+        </p>
+      </li>
+    </ul>
+    <figure class="full_width_image">
+      <img src="projects/Plant Music/Initial_rendering.PNG" alt="Initial Rendering">
+      <figcaption>Initial Rendering</figcaption>
+    </figure>
+
+    <p class="project_subtitles">Process</p>
+    <p class="project_subtitles_lv2">Building a Circuit</p>
+    <p class="project_text">The circuit is built around a 555 timer, which converts changes in the electrical resistance
+      of the plant into a series of electrical
+      pulses. The plant acts as a variable resistor: when the plant's electrical conductivity changes, the resistance in
+      the circuit changes, which in turn changes
+      the timing of the 555 timer's output pulses. These pulses are sent to the Arduino, allowing it to measure the
+      changing electrical activity of the plant.
+      The Arduino measures the time between consecutive pulses using its interrupt pins. Separate inputs are used for
+      the two plants, allowing each plant to be
+      monitored independently.
+    </p>
+    <div class="images">
+      <img src="projects/Plant Music/circuit.PNG" alt="Circuit image with text explanations" class="general_pic">
+    </div>
+    <figcaption>Electronic circuit</figcaption>
+
+    <p class="project_subtitles_lv2">Signals transformation C++ </p>
+    <p class="project_text">The Arduino receives the pulse signals generated by the 555 timer and measures the time
+      between
+      consecutive pulses for each plant. It collects a series of pulse intervals and calculates several characteristics
+      of
+      the signal, including the average value, range, and standard deviation. These measurements allow the program to
+      distinguish normal fluctuations from larger changes in the plant's electrical activity. A threshold and cooldown
+      system are used to prevent small fluctuations or very rapid changes from producing too many notes, making the
+      musical
+      response smoother and more stable.
+    </p>
+    <p class="project_text">The measured signal is then mapped to musical parameters. The average pulse value determines
+      the pitch within a defined note range, with Plant 1 using a lower register and Plant 2 using a higher register.
+      The
+      resulting notes are constrained to a pentatonic musical scale. Larger changes in the signal affect the MIDI
+      velocity
+      and duration, while unusually large variations can trigger chords instead of individual notes. The two plants are
+      assigned
+      to separate MIDI channels so their musical responses can be processed independently.
+    </p>
+    <p class="project_text">The resulting MIDI messages contain the note, velocity, duration, and channel information
+      and are sent from the Arduino to Pure Data.
+    </p>
+
+    <p class="project_subtitles_lv2">Audio Environment in PureData</p>
+    <p class="project_text">Pure Data separates the two channels and uses the MIDI parameters to control the
+      sound-generating processes.
+      The note controls pitch, velocity controls the intensity of the sound, and the duration value is used to shape the
+      sound envelope.
+      The sounds of two plants combine and a reverb is added to make the melody more ambient. Each plant therefore
+      follows the same basic
+      signal-conversion process while producing a distinct musical register and sound layer.
+    </p>
+
+    <p class="project_subtitles_lv2">Midi Connection and Raspberry Pi</p>
+    <p class="project_text">After testing everything, the Arduino is connected to the Raspberry Pi, which acts as the
+      central computer for the audio system.
+      The Arduino sends MIDI data through USB, while the Raspberry Pi runs Pure Data and handles the real-time
+      generation and processing of sound.
+      I used ttymidi to bridge the Arduino's serial MIDI data into the JACK audio environment, allowing the MIDI
+      messages to be received by Pure Data.
+    </p>
+    <p class="project_text">The Raspberry Pi also handles the final audio output. JACK is used to route the audio
+      generated by Pure Data to the stereo audio
+      output and speakers. Setting up this part of the system required troubleshooting the communication between the
+      Arduino, MIDI routing, Pure Data, and
+      the audio hardware. The final setup allows the entire system to run independently without requiring a computer to
+      manually control the installation.
+      Once powered on, the system can receive signals from both plants, translate them into sound, and continuously play
+      the resulting ambient composition
+      in real time.
+    </p>
+    <div class="images">
+      <img src="projects/Plant Music/pipeline.PNG" alt="Pipeline image with text explanations" class="general_pic">
+    </div>
+    <figcaption>Main pipeline components</figcaption>
+
+    <p class="project_subtitles_lv2">Pot Design & 3D Printing</p>
+    <p class="project_text">The final housing was designed as a custom two-part pot that integrates the electronics into
+      the
+      physical form of the installation. The lower section houses the larger electronic components, including the
+      breadboard,
+      Arduino, Raspberry Pi, and associated wiring. I designed openings and internal channels into the structure to
+      route
+      connections to the speakers, power supply, and electrodes attached to both plants. This keeps the technical
+      components
+      concealed while still allowing access for assembly, troubleshooting, and maintenance.
+    </p>
+    <p class="project_text">The upper section separates the plant from the electronics and provides a solid platform for
+      the
+      plant to sit on. The two sections connect through a twist-and-lock mechanism, allowing the upper section to be
+      securely
+      attached during use and easily removed when access to the electronics is needed. The connection also makes it
+      possible to transport the pot as a single unit. I designed the exterior relief to continue across both sections,
+      so when the pieces are assembled, the pattern aligns and reads as one continuous surface rather than two separate
+      parts.
+    </p>
+    <p class="project_text">Designing and 3D printing the housing was an important step in moving the project from a
+      functional electronics prototype
+      toward a finished installation. Instead of having exposed components, breadboards, and loose wires, the technical
+      system becomes integrated into
+      the object itself. This helped shift the focus from the technology to the plants and the resulting interaction and
+      sound.
+    </p>
+    <div class="images special_margin">
+      <figure>
+        <img src="projects/Plant Music/3dModel.png" alt="3D model" class="general_pic">
+        <figcaption>3D model</figcaption>
+      </figure>
+      <figure>
+        <img src="projects/Plant Music/filler_3dprintphoto.PNG" alt="3D print" class="general_pic">
+        <figcaption>3D print</figcaption>
+      </figure>
+    </div>
+
+    <p class="project_subtitles">Challenges and Learning Outcomes</p>
+    <p class="project_subtitles_lv2">Calibration and Automation</p>
+    <p class="project_text">One of the main challenges was making the system adaptable to different plants and electrode
+      positions. In the earlier version,
+      I adjusted threshold values manually in the code, which was time-consuming and required repeatedly reattaching the
+      electrodes and finding a position
+      that produced useful readings. I addressed this by developing an automatic calibration process. When calibration
+      is triggered, the system collects 10
+      seconds of data while the plant is in a stable state, calculates its typical signal characteristics, and uses
+      those values to determine when future changes
+      are significant enough to influence the music. A physical button allows the system to be recalibrated at any time,
+      which is useful when changing plants,
+      repositioning electrodes, or when environmental conditions change. This made the system much more practical for a
+      real installation and reduced the need
+      for manual adjustment.
+    </p>
+    <p class="project_subtitles_lv2">Understanding Plant-Specific Signals</p>
+    <p class="project_text">Another major learning outcome came from testing the system with different types of plants.
+      I learned that the quality and
+      consistency of the signal depends strongly on the plant's physical structure and how water and electrical signals
+      move through it. For example,
+      plants with very thick stems and leaves, such as palms, tended to produce smaller changes and therefore generated
+      slower and more monotonous musical responses.
+    </p>
+    <p class="project_text">Through experimentation, I found that smaller houseplants, such as violets, produced more
+      useful and consistent results for this system.
+      I also found that placing the electrodes relatively close together, such as on the same stem, produced a more
+      stable baseline while still allowing larger
+      changes, such as touching the plant, to be detected even when the interaction happened elsewhere on the plant.
+      This testing taught me that the electronics
+      and algorithm cannot be completely separated from the physical characteristics of the organism being measured. In
+      the future, I could extend the system by
+      creating plant-specific presets that adjust parameters such as threshold, sample size, and sensitivity based on
+      the type of plant being used.
+    </p>
+    <p class="project_text">Comparison of signals from leafs vs stems. The threshold and sample size values are
+      identical. The electrodes locations are different:
+    </p>
+    <div class="images special_margin">
+      <figure>
+        <video controls class="general_pic general_pic_main">
+          <source src="projects/Plant Music/leaf_leaf_signal.mp4" type="video/mp4"
+            alt="Thicker leaf tissue → weaker signal">
+        </video>
+        <figcaption>Thicker leaf tissue → weaker signal</figcaption>
+      </figure>
+      <figure>
+        <video controls class="general_pic general_pic_main">
+          <source src="projects/Plant Music/stem_stem_signal.mp4" type="video/mp4"
+            alt="Stem placement → stronger, more stable signal">
+        </video>
+        <figcaption>Stem placement → stronger, more stable signal</figcaption>
+      </figure>
+    </div>
+
+    <p class="project_subtitles_lv2">Integrating a Second Plant</p>
+    <p class="project_text">The original system was designed around a single plant, so adding a second plant required
+      changes to both the
+      Arduino code and the Pure Data environment. I restructured several functions so that the same processing logic
+      could be applied
+      independently to multiple inputs, while assigning each plant its own MIDI channel. In Pure Data, the two channels
+      are separated
+      and processed through their own instruments before being combined into a shared audio environment and reverb.
+    </p>
+    <p class="project_text">This process helped me understand how to design the system in a more modular way rather than
+      creating separate
+      code and audio processes for every plant. The current structure works well for two plants and could be expanded
+      further, although
+      an installation with more than approximately five plants would benefit from a higher level of abstraction.
+    </p>
+
+  </div>
+  <!---Footer-->
+
+  <div class="bottom_contact">
+    <div class="icons_footer">
+      <a href="mailto:mariia.minieieva@gmail.com">
+        <img id="email" src="images/email_icon.svg" alt="" class="icon_footer">
+      </a>
+      <a href="https://www.linkedin.com/in/minieieva/">
+        <img id="linkedin" src="images/linkedin_icon.svg" alt="" class="icon_footer">
+      </a>
+    </div>
+    <footer>
+      <p>Crafted by Mariia Minieieva</p>
+    </footer>
+  </div>
+
+  <!-- Removing splash animation when clicking on WORK -->
+  <script>
+    document.getElementById('work-link').addEventListener('click', function (event) {
+      event.preventDefault();
+      sessionStorage.setItem('skipAnimation', 'true');
+      window.location.href = 'index.html';
+    });
+  </script>
+
+</body>
+
+</html>
