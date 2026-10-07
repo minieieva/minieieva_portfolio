@@ -363,6 +363,7 @@ input[type=submit]:hover {
 .general_project_body .project_text {
   font-size: var(--small-text);
 }
+
 .general_project_body hr {
   width: 80vw;
 }
