@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="3D artist, art portfolio, Houdini">
+  <meta name="description" content="3D Artist Mariia Minieieva. Art Portfolio.">
+  <title>minieieva</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <header>
+    <div class="navbar">
+      <div class="container">
+        <!-- Mobile Navigation -->
+        <div class="mobile_nav">
+          <a href="index.html">
+            <img id="logo_id" src="images/minieieva_logo_black.png" alt="Logo" class="logo_mobile">
+          </a>
+          <img id="mobile_cta" class="mobile_menu" src="images/menu.svg" alt="Open Menu">
+        </div>
+
+
+        <!-- Desktop Navigation -->
+        <div class="desktop_nav">
+          <a href="index.html">
+            <img id="logo_id" src="images/minieieva_logo_black.png" alt="Logo" class="logo">
+          </a>
+          <img id="mobile_exit" class="mobile_menu_exit" src="images/exit.svg" alt="Close Navigation">
+          <div id="navigation" class="navigation_mobile">
+            <ul class="primary_nav">
+              <li><a id="work-link" class="items_nav" href="index.html">WORK</a></li>
+              <!-- <li><a class="items_nav" href="about.html">ABOUT</a></li> -->
+              <li><a class="items_nav" href="contact.html">CONTACT</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="general_project_body">
+    <!---Content-->
+    <p class="project_title custom_underline">Fracturing system
+    </p>
+    <p class="project_subtitles">Credits</p>
+    <p class="project_text"><i>The work described was completed during my internship as a <b>Game Developer Intern</b>
+        at <b>Betula Games,</b> under the supervision of Troels Zefugi and Linnea Sebastian, during the work on a game
+        Dødsbo</i></p>
+    <div class="responsibilities">
+      <span>Skills & Technology:</span>
+      <ul class="two_columns">
+        <li>C#</li>
+        <li>Unity</li>
+        <li>2D Game Art</li>
+        <li>Game Design</li>
+        <li>Code Optimization</li>
+      </ul>
+    </div>
+
+    <p class="project_subtitles">Overview</p>
+    <p class="project_text">Dødsbo is a narrative-driven, emotional game about meeting up with your dysfunctional
+      siblings to clear
+      out your deceased dad's estate. One of the Dødsbo game experiences is a minigame where the player arranges found
+      objects
+      inside a box, making the belongings perfectly fit together. My contribution to this minigame was implementing
+      object
+      fracturing mechanics to ease the packing process for the times when a player gets stuck. The purpose of this
+      mechanic
+      is to help the game maintain a cozy stressless vibe without putting a pressure on getting the puzzle correct in
+      its
+      original form.
+    </p>
+    <div class="images special_margin">
+      <video controls class="general_pic general_pic_main">
+        <source src="projects/Betula/overview.mp4" type="video/mp4" alt="Minigame gameplay">
+      </video>
+      <img src="projects/Betula/overview.png" alt="Fracturing demonstration" class="general_pic">
+    </div>
+
+    <p class="project_subtitles">Goals</p>
+    <ul>
+      <li>
+        <p class="project_text"><b>Intuitive fracturing:</b>Help players understand how to fracture objects.
+        </p>
+      </li>
+      <li>
+        <p class="project_text"><b>Complete the scene with 2D assets for fracturing:</b> Create assets that match the
+          artist's
+          established style, using references.
+        </p>
+      </li>
+      <li>
+        <p class="project_text"><b>Optimize performance:</b> Processing and modifying every pixel in arrays can be
+          costly. I
+          restructured the code to make it four times faster than the original solution.
+        </p>
+      </li>
+    </ul>
+
+    <p class="project_subtitles">Game Design</p>
+    <p class="project_subtitles_lv2">How should the fracturing of the pieces be initiated? Should it be encouraged?</p>
+    <p class="project_text">I tried designs where fracturing was triggered by the number of rotations or object
+      placements,
+      but they didn't fit the cozy, relaxed feel the game should create. During testing, I suggested using a hammer that
+      players could pick up and use to break objects. This makes fracturing voluntary—not a punishment, but a helper
+      tool—and also makes the puzzle a bit more fun. Players are encouraged to solve the puzzle because a correct
+      solution
+      takes less time. Fracturing guarantees success, but takes longer because each piece has to be dragged and dropped
+      individually.
+    </p>
+    <div class="images">
+      <video controls class="general_pic general_pic_main">
+        <source src="projects/Betula/Dragging vs fracturing.mp4" type="video/mp4" alt="Dragging vs Fracturing">
+      </video>
+    </div>
+    <figcaption>Dragging vs Fracturing</figcaption>
+
+    <p class="project_subtitles_lv2">How can the hammer be distinguished from the pieces the player needs to pack?</p>
+    <p class="project_text">Although the hammer is a tool, some of the existing sprites the player packs are also tools.
+      I made the hammer distinct without using text (one of my supervisor's requirements) in a few ways: the cursor
+      changes from a hand to a broken dish when hovering over the hammer, picking it up, or breaking objects. I also
+      made it larger than the other pieces and placed it to the right of the box. I added a cleaning rag to make it
+      look more like a tool.
+    </p>
+    <div class="images special_margin">
+      <figure>
+        <img src="projects/Betula/original.png" alt="Original sprite" class="general_pic">
+        <figcaption>Original sprite</figcaption>
+      </figure>
+      <figure>
+        <img src="projects/Betula/size.png" alt="Adjusted size" class="general_pic">
+        <figcaption>Adjusted size</figcaption>
+      </figure>
+    </div>
+        <div class="images special_margin">
+      <figure>
+        <img src="projects/Betula/rug.png" alt="Added rug" class="general_pic">
+        <figcaption>Added rug</figcaption>
+      </figure>
+      <figure>
+        <img src="projects/Betula/cursor.jpeg" alt="Added broken dish cursor" class="general_pic">
+        <figcaption>Added broken dish cursor</figcaption>
+      </figure>
+    </div>
+
+        <p class="project_subtitles">Game Development</p>
+    <p class="project_subtitles_lv2">Texture2D Pixel Processing and Transformation</p>
+    <p class="project_text">To adjust sprite textures when creating fractures—for example, by applying fractured-edge masks, adding 
+      black outlines, and rotating textures—I first had to convert them into pixel arrays and then modify the arrays. I did this by 
+      going through the arrays in nested for loops (for width and height) and comparing and applying changes to each pixel based on 
+      its position.
+    </p>
+    <p class="project_subtitles_lv2">Using Coroutines to Reduce Frame Freezes During Texture Processing</p>
+    <p class="project_text">Working at a real game development company was beneficial because it gave me the opportunity to optimize 
+      my code, which I wouldn't have done otherwise. I learned to use the Profiler, which shows how long each frame takes to process. 
+      Since I created sprites procedurally and made many texture modifications, processing a 4-cell piece took up to 60 ms, while 
+      the company's limit was 16 ms. I restructured my code by (1) passing in pixel arrays instead of textures and overwriting the 
+      original array instead of a copy, and (2) adding coroutines to divide texture operations across multiple frames. I also learned 
+      to create callbacks for coroutines.
+    </p>
+    <p class="project_subtitles_lv2">Algorithm for Selecting Pixels to Fracture</p>
+    <p class="project_text">By looking at the pieces and imagining how they should be fractured, I realized they could be divided 
+      into a maximum of 2 x 3 (or 3 x 2) cells. Each cell needed different fractured edges: edges next to other cells had to remain 
+      untouched, while exposed edges could be fractured. To handle corners, I hand-drew fracture masks for different edge and corner 
+      configurations. For each cell, I checked its position against the positions of the other cells to determine whether it formed 
+      a corner. I then selected and rotated the appropriate mask, resized it to fit the cell, and applied it to the pixel array. 
+      The mask made selected pixels transparent, creating a pointed fracture.
+    </p>
+    <div class="images special_margin">
+      <figure>
+        <img src="projects/Betula/original_knife.png" alt="Original knifesprite" class="general_pic">
+        <figcaption>Original knife sprite</figcaption>
+      </figure>
+      <figure>
+        <img src="projects/Betula/facturing_knife_applied.png" alt="Fractured knife sprite" class="general_pic">
+        <figcaption>Fractured knife sprite</figcaption>
+      </figure>
+    </div>
+
+    <p class="project_subtitles">Challenges and Learning Outcomes</p>
+    <p class="project_subtitles_lv2">Optimizing texture processing</p>
+    <p class="project_text">Working at a game development company gave me the chance to optimize my code—something I might not have done otherwise. In my own projects, 
+      I focus less on optimization because they are smaller. In a full-scale game, more things happen at once, so performance becomes an important part of development.
+    </p>
+    <p class="project_text">I learned to use the Profiler to measure how long each frame takes to process. Creating sprites procedurally involved many texture 
+      modifications, and processing a 4-cell piece took up to 60 ms, while the company's limit was 16 ms. I restructured the code to pass pixel arrays instead of 
+      textures and overwrite the original array rather than create a copy. I also used coroutines to spread texture operations across multiple frames and learned to 
+      create callbacks for them.
+    </p>
+    <div class="images special_margin">
+      <img src="projects/Betula/Profiler outcomes.png" alt="Profiler outcomes" class="general_pic">
+    </div>
+    <figcaption>Profiler Outcomes: workload is spread across frames</figcaption>
+  <!---Footer-->
+
+  <div class="bottom_contact">
+    <div class="icons_footer">
+      <a href="mailto:mariia.minieieva@gmail.com">
+        <img id="email" src="images/email_icon.svg" alt="" class="icon_footer">
+      </a>
+      <a href="https://www.linkedin.com/in/minieieva/">
+        <img id="linkedin" src="images/linkedin_icon.svg" alt="" class="icon_footer">
+      </a>
+    </div>
+    <footer>
+      <p>Crafted by Mariia Minieieva</p>
+    </footer>
+  </div>
+
+  <!-- Removing splash animation when clicking on WORK -->
+  <script>
+    document.getElementById('work-link').addEventListener('click', function (event) {
+      event.preventDefault();
+      sessionStorage.setItem('skipAnimation', 'true');
+      window.location.href = 'index.html';
+    });
+  </script>
+
+</body>
+
+</html>
